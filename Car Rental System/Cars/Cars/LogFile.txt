@@ -1,0 +1,154 @@
+2022-10-23 23:09:09.677 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:09:09.806 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:09:09.810 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:09:09.810 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:09:09.810 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:09:48.386 +03:00 [INF] Application is shutting down...
+2022-10-23 23:13:57.861 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:13:57.984 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:13:57.987 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:13:57.987 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:13:57.987 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:15:16.747 +03:00 [INF] Application is shutting down...
+2022-10-23 23:16:37.085 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:16:37.207 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:16:37.210 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:16:37.210 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:16:37.210 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:16:46.846 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/index.html - -
+2022-10-23 23:16:46.891 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.IO.FileNotFoundException: Could not find file 'C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars\bin\Debug\net6.0\Cars.xml'.
+File name: 'C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars\bin\Debug\net6.0\Cars.xml'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   at System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy)
+   at System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
+   at System.Xml.XmlTextReaderImpl.OpenUrl()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
+   at System.Xml.XPath.XPathDocument..ctor(String uri, XmlSpace space)
+   at System.Xml.XPath.XPathDocument..ctor(String uri)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.<>c__DisplayClass32_0.<IncludeXmlComments>b__0()
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.IncludeXmlComments(SwaggerGenOptions swaggerGenOptions, Func`1 xmlDocFactory, Boolean includeControllerXmlComments)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.IncludeXmlComments(SwaggerGenOptions swaggerGenOptions, String filePath, Boolean includeControllerXmlComments)
+   at Cars.Startup.<>c.<ConfigureServices>b__4_0(SwaggerGenOptions c) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars\Startup.cs:line 36
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
+   at Swashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.<>c.<AddSwaggerGen>b__0_1(IServiceProvider s)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
+   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-10-23 23:16:46.914 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/index.html - - - 500 - text/html;+charset=utf-8 70.6741ms
+2022-10-23 23:16:58.846 +03:00 [INF] Application is shutting down...
+2022-10-23 23:17:36.549 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:17:36.696 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:17:36.700 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:17:36.701 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:17:36.701 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:17:39.640 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/index.html - -
+2022-10-23 23:17:39.704 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/index.html - - - 200 - text/html;charset=utf-8 66.1692ms
+2022-10-23 23:17:39.918 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - -
+2022-10-23 23:17:40.035 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 116.5840ms
+2022-10-23 23:17:43.128 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/api/v1/cars - -
+2022-10-23 23:17:43.151 +03:00 [INF] Executing endpoint 'Cars.APIControllers.ApiCarsController.GetAllCars (Cars)'
+2022-10-23 23:17:43.161 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "ApiCars"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCars() on controller Cars.APIControllers.ApiCarsController (Cars).
+2022-10-23 23:17:43.645 +03:00 [INF] Entity Framework Core 6.0.10 initialized 'CarsContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: None
+2022-10-23 23:17:43.979 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+2022-10-23 23:17:43.992 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cars.ModelsDB.Car, Cars, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-23 23:17:44.012 +03:00 [INF] Executed action Cars.APIControllers.ApiCarsController.GetAllCars (Cars) in 847.0587ms
+2022-10-23 23:17:44.012 +03:00 [INF] Executed endpoint 'Cars.APIControllers.ApiCarsController.GetAllCars (Cars)'
+2022-10-23 23:17:44.014 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/api/v1/cars - - - 200 2 application/json;+charset=utf-8 885.5634ms
+2022-10-23 23:17:52.634 +03:00 [INF] Application is shutting down...
+2022-10-23 23:18:54.929 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:18:55.058 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:18:55.062 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:18:55.062 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:18:55.063 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:19:01.499 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/index.html - -
+2022-10-23 23:19:01.561 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/index.html - - - 200 - text/html;charset=utf-8 64.2514ms
+2022-10-23 23:19:01.672 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - -
+2022-10-23 23:19:01.770 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 98.3638ms
+2022-10-23 23:19:04.536 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/index.html - -
+2022-10-23 23:19:04.538 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/index.html - - - 200 - text/html;charset=utf-8 1.2375ms
+2022-10-23 23:19:04.627 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - -
+2022-10-23 23:19:04.629 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 2.0723ms
+2022-10-23 23:19:08.395 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/api/v1/cars - -
+2022-10-23 23:19:08.408 +03:00 [INF] Executing endpoint 'Cars.APIControllers.ApiCarsController.GetAllCars (Cars)'
+2022-10-23 23:19:08.416 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "ApiCars"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllCars() on controller Cars.APIControllers.ApiCarsController (Cars).
+2022-10-23 23:19:08.876 +03:00 [INF] Entity Framework Core 6.0.10 initialized 'CarsContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.7+5b98e4b74de93b590b44aef8dd7967c03acc433c' with options: None
+2022-10-23 23:19:09.197 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+2022-10-23 23:19:09.211 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cars.ModelsDB.Car, Cars, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-23 23:19:09.230 +03:00 [INF] Executed action Cars.APIControllers.ApiCarsController.GetAllCars (Cars) in 809.8022ms
+2022-10-23 23:19:09.231 +03:00 [INF] Executed endpoint 'Cars.APIControllers.ApiCarsController.GetAllCars (Cars)'
+2022-10-23 23:19:09.233 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/api/v1/cars - - - 200 2 application/json;+charset=utf-8 837.9044ms
+2022-10-23 23:19:13.069 +03:00 [INF] Application is shutting down...
+2022-10-23 23:19:39.677 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:19:39.803 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:19:39.806 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:19:39.806 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:19:39.806 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:19:53.484 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - -
+2022-10-23 23:19:53.625 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 144.0375ms
+2022-10-23 23:20:33.875 +03:00 [INF] Application is shutting down...
+2022-10-23 23:20:48.400 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:20:48.535 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:20:48.538 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:20:48.539 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:20:48.539 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:21:25.911 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/index.html - -
+2022-10-23 23:21:25.976 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/index.html - - - 200 - text/html;charset=utf-8 66.5631ms
+2022-10-23 23:21:26.087 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - -
+2022-10-23 23:21:26.193 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 106.2511ms
+2022-10-23 23:21:38.346 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/index.html - -
+2022-10-23 23:21:38.347 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/index.html - - - 200 - text/html;charset=utf-8 1.1822ms
+2022-10-23 23:21:38.484 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - -
+2022-10-23 23:21:38.486 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1.6971ms
+2022-10-23 23:21:49.960 +03:00 [INF] Application is shutting down...
+2022-10-23 23:21:51.155 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-10-23 23:21:51.276 +03:00 [INF] Now listening on: http://[::]:80
+2022-10-23 23:21:51.280 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-23 23:21:51.280 +03:00 [INF] Hosting environment: Development
+2022-10-23 23:21:51.280 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars\Cars
+2022-10-23 23:21:52.895 +03:00 [INF] Application is shutting down...

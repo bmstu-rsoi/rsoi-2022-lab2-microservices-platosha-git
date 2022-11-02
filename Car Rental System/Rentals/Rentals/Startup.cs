@@ -1,12 +1,12 @@
-using System.Reflection;
+﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Cars.ModelsDB;
-using Cars.Repositories;
-using Cars.WebControllers;
+using Rentals.ModelsDB;
+using Rentals.Repositories;
+using Rentals.WebControllers;
 using Serilog;
 
-namespace Cars
+namespace Rentals
 {
     public class Startup
     {
@@ -23,7 +23,7 @@ namespace Cars
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Cars", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Rentals", Version = "v1"});
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
@@ -34,8 +34,8 @@ namespace Cars
             AddDbContext(services, Configuration);
             AddLogging(services, Configuration);
             
-            services.AddScoped<ICarsRepository, CarsRepository>();
-            services.AddScoped<CarsController>();
+            services.AddScoped<IRentalsRepository, RentalsRepository>();
+            services.AddScoped<RentalsController>();
 
             services.AddControllersWithViews()
                 .AddNewtonsoftJson(options =>
@@ -51,7 +51,7 @@ namespace Cars
                 app.UseDeveloperExceptionPage();
             }
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cars v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rentals v1"));
 
             //app.UseHttpsRedirection();
 

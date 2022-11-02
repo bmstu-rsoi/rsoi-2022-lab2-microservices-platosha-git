@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Cars.ModelsDB;
+﻿using Cars.ModelsDB;
 
 namespace Cars.Repositories
 {

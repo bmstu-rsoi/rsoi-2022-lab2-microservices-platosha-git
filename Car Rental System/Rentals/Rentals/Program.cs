@@ -1,4 +1,4 @@
-namespace Cars
+namespace Rentals
 {
     public class Program
     {
@@ -13,7 +13,7 @@ namespace Cars
                 {
                     webBuilder
                         .UseStartup<Startup>()
-                        .UseUrls("http://localhost:8070");// + Environment.GetEnvironmentVariable("PORT"));
+                        .UseUrls("http://localhost:8060");// + Environment.GetEnvironmentVariable("PORT"));
                 });
     }
 }

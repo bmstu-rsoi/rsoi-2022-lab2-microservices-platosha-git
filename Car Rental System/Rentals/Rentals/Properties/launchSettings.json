@@ -5,10 +5,10 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:8070",
+      "applicationUrl": "http://localhost:8060",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "PORT": 8070
+        "PORT": 8060
       }
     }
   }

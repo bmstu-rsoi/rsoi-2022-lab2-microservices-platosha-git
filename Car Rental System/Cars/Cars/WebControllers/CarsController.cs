@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Cars.ModelsDB;
+﻿using Cars.ModelsDB;
 using Cars.Repositories;
 
 namespace Cars.WebControllers

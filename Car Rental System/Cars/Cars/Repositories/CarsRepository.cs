@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Extensions.Logging;
-using Cars.ModelsDB;
+﻿using Cars.ModelsDB;
 
 namespace Cars.Repositories
 {

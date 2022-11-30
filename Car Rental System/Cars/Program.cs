@@ -13,7 +13,7 @@ namespace Cars
                 {
                     webBuilder
                         .UseStartup<Startup>()
-                        .UseUrls("http://localhost:8070");// + Environment.GetEnvironmentVariable("PORT"));
+                        .UseUrls("http://localhost:" + Environment.GetEnvironmentVariable("PORT"));
                 });
     }
 }

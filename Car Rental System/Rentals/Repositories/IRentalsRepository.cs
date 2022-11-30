@@ -2,14 +2,10 @@
 
 namespace Rentals.Repositories
 {
-    public enum ExitCode
-    {
-        Success,
-        Error
-    }
-    
     public interface IRentalsRepository
     {
-        List<Rental> FindAll();
+        Task<List<Rental>> FindAll(int page, int size);
+        Task<List<Rental>> FindByName(string username);
+        Task<Rental> FindByRentalUid(string username, Guid RentalUid);
     }
 }

@@ -12,9 +12,14 @@ namespace Cars.Controllers
             _carsRepository = carsRepository;
         }
 
-        public List<Car> GetAllCars()
+        public async Task<List<Car>> GetAllCars(int page, int size)
         {
-            return _carsRepository.FindAll();
+            return await _carsRepository.FindAll(page, size);
+        }
+        
+        public async Task<List<Car>> GetAvailableCars(int page, int size)
+        {
+            return await _carsRepository.FindAvailable(page, size);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Payments
                 {
                     webBuilder
                         .UseStartup<Startup>()
-                        .UseUrls("http://localhost:8050");// + Environment.GetEnvironmentVariable("PORT"));
+                        .UseUrls("http://localhost:" + Environment.GetEnvironmentVariable("PORT"));
                 });
     }
 }

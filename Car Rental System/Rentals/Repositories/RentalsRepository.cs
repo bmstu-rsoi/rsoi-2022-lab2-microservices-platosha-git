@@ -1,4 +1,5 @@
-﻿using Rentals.ModelsDB;
+﻿using Microsoft.EntityFrameworkCore;
+using Rentals.ModelsDB;
 
 namespace Rentals.Repositories
 {
@@ -13,12 +14,68 @@ namespace Rentals.Repositories
             _logger = logDb;
         }
 
-        public List<Rental> FindAll()
+        public async Task<List<Rental>> FindAll(int page, int size)
         {
-            var cars = _db.Rentals.ToList();
-            return cars;
+            try
+            {
+                var rentals = await _db.Rentals
+                    .OrderBy(x => x.Id)
+                    .Skip((page - 1) * size)
+                    .Take(size)
+                    .ToListAsync();
+                return rentals;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error while trying to FindAll");
+                Console.WriteLine(e);
+                throw;
+            }
         }
-        
+
+        public async Task<List<Rental>> FindByName(string username)
+        {
+            try
+            {
+                var rentals = await _db.Rentals
+                    .Where(x => x.Username == username)
+                    .OrderBy(x => x.Id)
+                    .ToListAsync();
+                return rentals;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error while trying to FindByName");
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public Task<Rental> FindByRentalUid(string username, Guid RentalUid)
+        {
+            throw new NotImplementedException();
+        }
+
+        /*public async Task<Rental> FindByRentalUid(string username, Guid RentalUid)
+        {
+            try
+            {
+                var rentals = await _db.Rentals
+                    .Where(x => x.Username == username && x.RentalUid.Equals(RentalUid))
+                    .OrderBy(x => x.Id)
+                    .Skip((page - 1) * size)
+                    .Take(size)
+                    .ToListAsync();
+                return rentals;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error while trying to FindByName");
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+        */
 
         public void Dispose()
         {

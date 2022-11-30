@@ -2,14 +2,9 @@
 
 namespace Cars.Repositories
 {
-    public enum ExitCode
-    {
-        Success,
-        Error
-    }
-    
     public interface ICarsRepository
     {
-        List<Car> FindAll();
+        Task<List<Car>> FindAll(int page, int size);
+        Task<List<Car>> FindAvailable(int page, int size);
     }
 }

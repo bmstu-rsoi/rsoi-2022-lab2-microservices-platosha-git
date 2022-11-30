@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Rentals.ModelsDB
+﻿namespace Rentals.ModelsDB
 {
     public partial class Rental
     {

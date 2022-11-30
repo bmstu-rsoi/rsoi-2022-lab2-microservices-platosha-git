@@ -9,10 +9,12 @@
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <DocumentationFile>bin\Debug\Cars.xml</DocumentationFile>
+      <NoWarn>1701;1702;1590</NoWarn>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <DocumentationFile>bin\Release\Cars.xml</DocumentationFile>
+      <NoWarn>1701;1702;1590</NoWarn>
     </PropertyGroup>
 
     <ItemGroup>
@@ -30,6 +32,10 @@
       <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
       <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ModelsDTO\ModelsDTO.csproj" />
     </ItemGroup>
 
 </Project>

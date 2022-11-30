@@ -170,3 +170,87 @@ FROM payment AS p
 2022-11-10 18:15:27.456 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
 2022-11-10 18:15:27.607 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 150.2328ms
 2022-11-10 18:15:29.667 +03:00 [INF] Application is shutting down...
+2022-11-11 23:20:02.264 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-11 23:20:02.500 +03:00 [INF] Now listening on: http://localhost:8050
+2022-11-11 23:20:02.506 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-11 23:20:02.507 +03:00 [INF] Hosting environment: Development
+2022-11-11 23:20:02.507 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-11-11 23:20:03.085 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-11-11 23:20:03.303 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 223.5185ms
+2022-11-11 23:20:03.736 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-11-11 23:20:03.934 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 198.3590ms
+2022-11-11 23:20:07.299 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/api/v1/payments - -
+2022-11-11 23:20:07.331 +03:00 [INF] Executing endpoint 'Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments)'
+2022-11-11 23:20:07.351 +03:00 [INF] Route matched with {action = "GetAllPayments", controller = "ApiPayments"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPayments() on controller Payments.Controllers.ApiPaymentsController (Payments).
+2022-11-11 23:20:09.126 +03:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+2022-11-11 23:20:09.217 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Payments.ModelsDB.Payment, Payments, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-11 23:20:09.275 +03:00 [INF] Executed action Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments) in 1914.5966ms
+2022-11-11 23:20:09.276 +03:00 [INF] Executed endpoint 'Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments)'
+2022-11-11 23:20:09.281 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payments - - - 200 941 application/json;+charset=utf-8 1981.9828ms
+2022-11-11 23:20:17.335 +03:00 [INF] Application is shutting down...
+2022-11-15 13:07:30.255 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-15 13:07:30.553 +03:00 [INF] Now listening on: http://localhost:8050
+2022-11-15 13:07:30.561 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-15 13:07:30.563 +03:00 [INF] Hosting environment: Development
+2022-11-15 13:07:30.563 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-11-15 13:07:30.877 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-11-15 13:07:31.098 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 227.2796ms
+2022-11-15 13:07:31.442 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-11-15 13:07:31.620 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.4283ms
+2022-11-15 13:08:22.794 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/api/v1/payments - -
+2022-11-15 13:08:22.822 +03:00 [INF] Executing endpoint 'Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments)'
+2022-11-15 13:08:22.841 +03:00 [INF] Route matched with {action = "GetAllPayments", controller = "ApiPayments"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPayments() on controller Payments.Controllers.ApiPaymentsController (Payments).
+2022-11-15 13:08:24.453 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+2022-11-15 13:08:24.556 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Payments.ModelsDB.Payment, Payments, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-15 13:08:24.610 +03:00 [INF] Executed action Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments) in 1760.5789ms
+2022-11-15 13:08:24.611 +03:00 [INF] Executed endpoint 'Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments)'
+2022-11-15 13:08:24.618 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payments - - - 200 941 application/json;+charset=utf-8 1823.2666ms
+2022-11-15 13:09:56.787 +03:00 [INF] Application is shutting down...
+2022-11-15 13:13:21.993 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-15 13:13:22.196 +03:00 [INF] Now listening on: http://localhost:8050
+2022-11-15 13:13:22.201 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-15 13:13:22.203 +03:00 [INF] Hosting environment: Development
+2022-11-15 13:13:22.203 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-11-15 13:13:22.563 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-11-15 13:13:22.730 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 169.6362ms
+2022-11-15 13:13:22.967 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-11-15 13:13:23.101 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.1250ms
+2022-11-15 13:18:42.135 +03:00 [INF] Application is shutting down...
+2022-11-22 22:46:26.670 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 22:46:26.970 +03:00 [INF] Now listening on: http://localhost:8050
+2022-11-22 22:46:26.976 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 22:46:26.978 +03:00 [INF] Hosting environment: Development
+2022-11-22 22:46:26.978 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-11-22 22:46:27.466 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger - -
+2022-11-22 22:46:27.527 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger - - - 301 0 - 66.5565ms
+2022-11-22 22:46:27.532 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-11-22 22:46:27.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 177.4305ms
+2022-11-22 22:46:27.744 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui.css - -
+2022-11-22 22:46:27.746 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-bundle.js - -
+2022-11-22 22:46:27.746 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-standalone-preset.js - -
+2022-11-22 22:46:27.776 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-11-22 22:46:27.776 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-11-22 22:46:27.776 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-11-22 22:46:27.778 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 31.8454ms
+2022-11-22 22:46:27.778 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 31.6661ms
+2022-11-22 22:46:27.778 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui.css - - - 200 143943 text/css 33.6824ms
+2022-11-22 22:46:28.059 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-11-22 22:46:28.105 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/favicon-32x32.png - -
+2022-11-22 22:46:28.106 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-11-22 22:46:28.107 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/favicon-32x32.png - - - 200 628 image/png 2.0025ms
+2022-11-22 22:46:28.314 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 255.2108ms
+2022-11-22 22:46:31.395 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/api/v1/payments - -
+2022-11-22 22:46:31.430 +03:00 [INF] Executing endpoint 'Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments)'
+2022-11-22 22:46:31.453 +03:00 [INF] Route matched with {action = "GetAllPayments", controller = "ApiPayments"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPayments() on controller Payments.Controllers.ApiPaymentsController (Payments).
+2022-11-22 22:46:33.233 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+2022-11-22 22:46:33.307 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Payments.ModelsDB.Payment, Payments, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-11-22 22:46:33.351 +03:00 [INF] Executed action Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments) in 1889.124ms
+2022-11-22 22:46:33.351 +03:00 [INF] Executed endpoint 'Payments.Controllers.ApiPaymentsController.GetAllPayments (Payments)'
+2022-11-22 22:46:33.358 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payments - - - 200 941 application/json;+charset=utf-8 1963.2068ms
+2022-11-22 22:46:40.946 +03:00 [INF] Application is shutting down...

@@ -13,7 +13,7 @@ namespace Rentals
                 {
                     webBuilder
                         .UseStartup<Startup>()
-                        .UseUrls("http://localhost:8060");// + Environment.GetEnvironmentVariable("PORT"));
+                        .UseUrls("http://localhost:" + Environment.GetEnvironmentVariable("PORT"));
                 });
     }
 }

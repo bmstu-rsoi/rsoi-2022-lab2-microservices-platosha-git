@@ -1,152 +1,315 @@
-2022-11-10 17:57:47.473 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2022-11-10 17:57:47.699 +03:00 [INF] Now listening on: http://localhost:8070
-2022-11-10 17:57:47.703 +03:00 [INF] Application started. Press Ctrl+C to shut down.
-2022-11-10 17:57:47.704 +03:00 [INF] Hosting environment: Development
-2022-11-10 17:57:47.705 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
-2022-11-10 17:57:48.139 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
-2022-11-10 17:57:48.217 +03:00 [ERR] An unhandled exception has occurred while executing the request.
-System.IO.FileNotFoundException: Could not find file 'C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars\bin\Debug\net6.0\Cars.xml'.
-File name: 'C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars\bin\Debug\net6.0\Cars.xml'
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
-   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   at System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy)
-   at System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   at System.Xml.XmlTextReaderImpl.OpenUrl()
-   at System.Xml.XmlTextReaderImpl.Read()
-   at System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
-   at System.Xml.XPath.XPathDocument..ctor(String uri, XmlSpace space)
-   at System.Xml.XPath.XPathDocument..ctor(String uri)
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.<>c__DisplayClass32_0.<IncludeXmlComments>b__0()
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.IncludeXmlComments(SwaggerGenOptions swaggerGenOptions, Func`1 xmlDocFactory, Boolean includeControllerXmlComments)
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.IncludeXmlComments(SwaggerGenOptions swaggerGenOptions, String filePath, Boolean includeControllerXmlComments)
-   at Cars.Startup.<>c.<ConfigureServices>b__4_0(SwaggerGenOptions c) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars\Startup.cs:line 29
-   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
-   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
-   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
-   at Swashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
-   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
-   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
-   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType)
-   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
-   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
-   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
-   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.<>c.<AddSwaggerGen>b__0_1(IServiceProvider s)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
-   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
-   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
-   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
-   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2022-11-10 17:57:48.270 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 500 - text/html;+charset=utf-8 136.7471ms
-2022-11-10 17:57:48.559 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/favicon.ico - -
-2022-11-10 17:57:48.563 +03:00 [ERR] An unhandled exception has occurred while executing the request.
-System.IO.FileNotFoundException: Could not find file 'C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars\bin\Debug\net6.0\Cars.xml'.
-File name: 'C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars\bin\Debug\net6.0\Cars.xml'
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
-   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
-   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
-   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
-   at System.Xml.XmlDownloadManager.GetStream(Uri uri, ICredentials credentials, IWebProxy proxy)
-   at System.Xml.XmlUrlResolver.GetEntity(Uri absoluteUri, String role, Type ofObjectToReturn)
-   at System.Xml.XmlTextReaderImpl.OpenUrl()
-   at System.Xml.XmlTextReaderImpl.Read()
-   at System.Xml.XPath.XPathDocument.LoadFromReader(XmlReader reader, XmlSpace space)
-   at System.Xml.XPath.XPathDocument..ctor(String uri, XmlSpace space)
-   at System.Xml.XPath.XPathDocument..ctor(String uri)
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.<>c__DisplayClass32_0.<IncludeXmlComments>b__0()
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.IncludeXmlComments(SwaggerGenOptions swaggerGenOptions, Func`1 xmlDocFactory, Boolean includeControllerXmlComments)
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenOptionsExtensions.IncludeXmlComments(SwaggerGenOptions swaggerGenOptions, String filePath, Boolean includeControllerXmlComments)
-   at Cars.Startup.<>c.<ConfigureServices>b__4_0(SwaggerGenOptions c) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars\Startup.cs:line 29
-   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
-   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
-   at Microsoft.Extensions.Options.UnnamedOptionsManager`1.get_Value()
-   at Swashbuckle.AspNetCore.SwaggerGen.ConfigureSwaggerGeneratorOptions..ctor(IOptions`1 swaggerGenOptionsAccessor, IServiceProvider serviceProvider, IWebHostEnvironment hostingEnv)
-   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
-   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitIEnumerable(IEnumerableCallSite enumerableCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitNoCache(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
-   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(Type serviceType)
-   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
-   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
-   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
-   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
-   at Microsoft.Extensions.DependencyInjection.SwaggerGenServiceCollectionExtensions.<>c.<AddSwaggerGen>b__0_1(IServiceProvider s)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
-   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
-   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
-   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.GetService(IServiceProvider sp, Type type, Type middleware)
-   at lambda_method1(Closure , Object , HttpContext , IServiceProvider )
-   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
-   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
-2022-11-10 17:57:48.572 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/favicon.ico - - - 500 - text/plain;+charset=utf-8 13.3732ms
-2022-11-10 17:57:54.235 +03:00 [INF] Application is shutting down...
-2022-11-10 18:05:46.604 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
-2022-11-10 18:05:46.880 +03:00 [INF] Now listening on: http://localhost:8070
-2022-11-10 18:05:46.887 +03:00 [INF] Application started. Press Ctrl+C to shut down.
-2022-11-10 18:05:46.888 +03:00 [INF] Hosting environment: Development
-2022-11-10 18:05:46.889 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
-2022-11-10 18:05:47.572 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
-2022-11-10 18:05:47.802 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 235.0860ms
-2022-11-10 18:05:48.062 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
-2022-11-10 18:05:48.255 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 193.0625ms
-2022-11-10 18:05:53.434 +03:00 [INF] Application is shutting down...
+2022-11-22 22:49:01.505 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 22:49:01.760 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 22:49:01.768 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 22:49:01.769 +03:00 [INF] Hosting environment: Development
+2022-11-22 22:49:01.769 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 22:49:02.485 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 22:49:02.726 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 246.7578ms
+2022-11-22 22:49:02.960 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 22:49:03.143 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.6155ms
+2022-11-22 22:49:11.401 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=10&showAll=true - -
+2022-11-22 22:49:11.430 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 22:49:11.470 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-22 22:49:13.290 +03:00 [INF] Executed DbCommand (87ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-22 22:49:13.404 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-22 22:49:13.459 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1981.2457ms
+2022-11-22 22:49:13.459 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 22:49:13.466 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=10&showAll=true - - - 200 1831 application/json;+charset=utf-8 2064.8120ms
+2022-11-22 22:49:21.985 +03:00 [INF] Application is shutting down...
+2022-11-22 22:50:06.931 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 22:50:07.183 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 22:50:07.189 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 22:50:07.189 +03:00 [INF] Hosting environment: Development
+2022-11-22 22:50:07.190 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 22:50:07.916 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 22:50:08.136 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 223.8925ms
+2022-11-22 22:50:08.379 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 22:50:08.590 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 210.0422ms
+2022-11-22 22:50:53.814 +03:00 [INF] Application is shutting down...
+2022-11-22 22:51:10.183 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 22:51:10.409 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 22:51:10.415 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 22:51:10.416 +03:00 [INF] Hosting environment: Development
+2022-11-22 22:51:10.416 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 22:51:10.799 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 22:51:11.027 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 232.2480ms
+2022-11-22 22:51:11.282 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 22:51:11.515 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 233.7533ms
+2022-11-22 22:51:53.529 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=5 - -
+2022-11-22 22:51:53.558 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 22:51:53.600 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-22 22:51:55.548 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-22 22:51:55.661 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-22 22:51:55.721 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 2110.1696ms
+2022-11-22 22:51:55.722 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 22:51:55.730 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=5 - - - 200 940 application/json;+charset=utf-8 2201.1270ms
+2022-11-22 22:52:10.664 +03:00 [INF] Application is shutting down...
+2022-11-22 22:52:41.767 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 22:52:41.976 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 22:52:41.981 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 22:52:41.982 +03:00 [INF] Hosting environment: Development
+2022-11-22 22:52:41.982 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 22:52:42.320 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 22:52:42.525 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 209.6852ms
+2022-11-22 22:52:42.721 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 22:52:42.911 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 189.6949ms
+2022-11-22 22:53:01.373 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=4&showAll=true - -
+2022-11-22 22:53:01.403 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 22:53:01.457 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-22 22:53:03.280 +03:00 [INF] Executed DbCommand (91ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-22 22:53:03.403 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-22 22:53:03.458 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1990.9716ms
+2022-11-22 22:53:03.458 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 22:53:03.465 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=4&showAll=true - - - 200 765 application/json;+charset=utf-8 2091.2437ms
+2022-11-22 22:53:15.071 +03:00 [INF] Application is shutting down...
+2022-11-22 23:01:24.865 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 23:01:25.048 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 23:01:25.052 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 23:01:25.054 +03:00 [INF] Hosting environment: Development
+2022-11-22 23:01:25.054 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 23:01:25.496 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 23:01:25.687 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 194.1015ms
+2022-11-22 23:01:25.900 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 23:01:26.052 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 151.5513ms
+2022-11-22 23:01:48.175 +03:00 [INF] Application is shutting down...
+2022-11-22 23:08:01.824 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 23:08:02.089 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 23:08:02.096 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 23:08:02.098 +03:00 [INF] Hosting environment: Development
+2022-11-22 23:08:02.098 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 23:08:02.858 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 23:08:03.083 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 229.9570ms
+2022-11-22 23:08:03.303 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 23:08:03.504 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.1183ms
+2022-11-22 23:08:17.064 +03:00 [INF] Application is shutting down...
+2022-11-22 23:14:11.334 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 23:14:11.474 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 23:14:11.478 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 23:14:11.479 +03:00 [INF] Hosting environment: Development
+2022-11-22 23:14:11.479 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 23:14:12.002 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 23:14:12.127 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 127.0603ms
+2022-11-22 23:14:12.243 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 23:14:12.361 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 117.8300ms
+2022-11-22 23:14:25.803 +03:00 [INF] Application is shutting down...
+2022-11-22 23:19:30.781 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 23:19:30.921 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 23:19:30.924 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 23:19:30.925 +03:00 [INF] Hosting environment: Development
+2022-11-22 23:19:30.926 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 23:19:31.485 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 23:19:31.628 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 146.1156ms
+2022-11-22 23:19:31.762 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 23:19:31.889 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.9329ms
+2022-11-22 23:19:40.527 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=5&showAll=true - -
+2022-11-22 23:19:40.542 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 23:19:40.566 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-22 23:19:41.721 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-22 23:19:41.820 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-22 23:19:41.861 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1290.4306ms
+2022-11-22 23:19:41.861 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 23:19:41.865 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=5&showAll=true - - - 200 948 application/json;+charset=utf-8 1338.6404ms
+2022-11-22 23:22:50.554 +03:00 [INF] Application is shutting down...
+2022-11-22 23:41:31.099 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-22 23:41:31.253 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-22 23:41:31.257 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-22 23:41:31.258 +03:00 [INF] Hosting environment: Development
+2022-11-22 23:41:31.259 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-22 23:41:31.739 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-22 23:41:31.883 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 147.5402ms
+2022-11-22 23:41:32.017 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-22 23:41:32.153 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 135.9577ms
+2022-11-22 23:41:53.731 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=3&showAll=True - -
+2022-11-22 23:41:53.746 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 23:41:53.768 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-22 23:41:54.815 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-22 23:41:54.884 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-22 23:41:54.915 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1143.0269ms
+2022-11-22 23:41:54.916 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-22 23:41:54.919 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=3&showAll=True - - - 200 590 application/json;+charset=utf-8 1187.8537ms
+2022-11-22 23:42:14.891 +03:00 [INF] Application is shutting down...
+2022-11-23 14:26:12.593 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-23 14:26:12.850 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-23 14:26:12.855 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-23 14:26:12.856 +03:00 [INF] Hosting environment: Development
+2022-11-23 14:26:12.856 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-23 14:26:13.380 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-23 14:26:13.560 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 189.0679ms
+2022-11-23 14:26:13.748 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-23 14:26:13.954 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 205.8413ms
+2022-11-23 14:26:22.287 +03:00 [INF] Application is shutting down...
+2022-11-23 14:26:40.807 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-23 14:26:40.984 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-23 14:26:40.988 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-23 14:26:40.989 +03:00 [INF] Hosting environment: Development
+2022-11-23 14:26:40.990 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-23 14:26:41.267 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-23 14:26:41.473 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 211.3828ms
+2022-11-23 14:26:41.643 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-23 14:26:41.809 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 165.8165ms
+2022-11-23 14:26:58.983 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=6&showAll=True - -
+2022-11-23 14:26:59.009 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:26:59.055 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-23 14:27:01.107 +03:00 [INF] Executed DbCommand (85ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-23 14:27:01.222 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-23 14:27:01.275 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 2213.3425ms
+2022-11-23 14:27:01.275 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:27:01.283 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=6&showAll=True - - - 200 1123 application/json;+charset=utf-8 2300.0632ms
+2022-11-23 14:27:15.286 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=True - -
+2022-11-23 14:27:15.286 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:27:15.289 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-23 14:27:15.304 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-23 14:27:15.306 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-23 14:27:15.307 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 17.9295ms
+2022-11-23 14:27:15.307 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:27:15.307 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=True - - - 200 1831 application/json;+charset=utf-8 21.8392ms
+2022-11-23 14:27:24.201 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-11-23 14:27:24.202 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:27:24.202 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-23 14:27:24.323 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-23 14:27:24.324 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-23 14:27:24.324 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 122.149ms
+2022-11-23 14:27:24.324 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:27:24.325 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 1115 application/json;+charset=utf-8 123.0474ms
+2022-11-23 14:27:38.811 +03:00 [INF] Application is shutting down...
+2022-11-23 14:35:24.447 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-23 14:35:24.635 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-23 14:35:24.639 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-23 14:35:24.640 +03:00 [INF] Hosting environment: Development
+2022-11-23 14:35:24.641 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-23 14:35:25.093 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-23 14:35:25.337 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 247.2189ms
+2022-11-23 14:35:25.520 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-23 14:35:25.697 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.9444ms
+2022-11-23 14:35:54.311 +03:00 [INF] Application is shutting down...
+2022-11-23 14:46:22.710 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-23 14:46:22.944 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-23 14:46:22.953 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-23 14:46:22.955 +03:00 [INF] Hosting environment: Development
+2022-11-23 14:46:22.956 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-23 14:46:23.224 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-23 14:46:23.427 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 207.2281ms
+2022-11-23 14:46:23.615 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-23 14:46:23.812 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 197.5678ms
+2022-11-23 14:46:28.765 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-11-23 14:46:28.791 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:46:28.836 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-23 14:46:30.683 +03:00 [INF] Executed DbCommand (80ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-23 14:46:30.790 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-23 14:46:30.845 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 2000.7801ms
+2022-11-23 14:46:30.848 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 14:46:30.856 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 1115 application/json;+charset=utf-8 2090.4179ms
+2022-11-23 14:46:40.248 +03:00 [INF] Application is shutting down...
+2022-11-23 18:09:29.587 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-23 18:09:29.858 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-23 18:09:29.863 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-23 18:09:29.864 +03:00 [INF] Hosting environment: Development
+2022-11-23 18:09:29.864 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-23 18:09:30.635 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-23 18:09:30.893 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 262.8151ms
+2022-11-23 18:09:31.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-23 18:09:31.258 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 146.5328ms
+2022-11-23 18:09:44.815 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=6 - -
+2022-11-23 18:09:44.845 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 18:09:44.888 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-23 18:09:46.916 +03:00 [INF] Executed DbCommand (99ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-23 18:09:47.034 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-23 18:09:47.093 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 2195.72ms
+2022-11-23 18:09:47.095 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 18:09:47.107 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars?page=1&size=6 - - - 200 1096 application/json;+charset=utf-8 2292.1234ms
+2022-11-23 18:10:00.663 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-11-23 18:10:00.665 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 18:10:00.666 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-23 18:10:00.680 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-23 18:10:00.682 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-23 18:10:00.683 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 15.9269ms
+2022-11-23 18:10:00.683 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-23 18:10:00.684 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 1097 application/json;+charset=utf-8 21.1298ms
+2022-11-23 18:10:20.200 +03:00 [INF] Application is shutting down...
+2022-11-30 18:46:53.419 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-11-30 18:46:53.728 +03:00 [INF] Now listening on: http://localhost:8070
+2022-11-30 18:46:53.736 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-30 18:46:53.738 +03:00 [INF] Hosting environment: Development
+2022-11-30 18:46:53.738 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Cars
+2022-11-30 18:46:54.271 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-11-30 18:46:54.493 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 228.1319ms
+2022-11-30 18:46:54.677 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-11-30 18:46:54.715 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/favicon-32x32.png - -
+2022-11-30 18:46:54.729 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-11-30 18:46:54.730 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/favicon-32x32.png - - - 200 628 image/png 14.7831ms
+2022-11-30 18:46:54.839 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 162.2664ms
+2022-11-30 18:46:57.245 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=True - -
+2022-11-30 18:46:57.277 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-30 18:46:57.332 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-30 18:46:59.519 +03:00 [INF] Executed DbCommand (80ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.id
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-30 18:46:59.620 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-30 18:46:59.674 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 2333.8352ms
+2022-11-30 18:46:59.675 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-30 18:46:59.683 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=True - - - 200 1801 application/json;+charset=utf-8 2438.0770ms
+2022-11-30 18:47:06.360 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-11-30 18:47:06.361 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-30 18:47:06.362 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-11-30 18:47:06.409 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-11-30 18:47:06.411 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-11-30 18:47:06.412 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 49.3202ms
+2022-11-30 18:47:06.413 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-11-30 18:47:06.413 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 1097 application/json;+charset=utf-8 53.5560ms
+2022-11-30 18:47:16.222 +03:00 [INF] Application is shutting down...

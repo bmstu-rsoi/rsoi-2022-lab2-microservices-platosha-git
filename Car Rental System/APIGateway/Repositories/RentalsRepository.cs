@@ -15,7 +15,7 @@ public class RentalsRepository : IRentalsRepository
         _logger = logger;
     }
 
-    public async Task<PaginationRentalsDTO?> FindAllByUsername(string username)
+    public async Task<List<RentalsDTO>?> FindAllByUsername(string username)
     {
         var query = HttpUtility.ParseQueryString(string.Empty);
         query["X-User-Name"] = username;
@@ -23,6 +23,17 @@ public class RentalsRepository : IRentalsRepository
         var response = await _httpClient.GetAsync($"/api/v1/rental/?{query}");
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<PaginationRentalsDTO>();
+        return await response.Content.ReadFromJsonAsync<List<RentalsDTO>>();
+    }
+
+    public async Task<RentalsDTO?> FindByUsernameAndUid(string username, Guid rentalUid)
+    {
+        var query = HttpUtility.ParseQueryString(string.Empty);
+        query["X-User-Name"] = username;
+
+        var response = await _httpClient.GetAsync($"/api/v1/rental/{rentalUid}/?{query}");
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RentalsDTO?>();
     }
 }

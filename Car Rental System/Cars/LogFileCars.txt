@@ -313,3 +313,59 @@ LIMIT @__p_1 OFFSET @__p_0
 2022-11-30 18:47:06.413 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
 2022-11-30 18:47:06.413 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 1097 application/json;+charset=utf-8 53.5560ms
 2022-11-30 18:47:16.222 +03:00 [INF] Application is shutting down...
+2022-12-02 18:39:06.149 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-02 18:39:06.347 +03:00 [INF] Now listening on: http://localhost:8070
+2022-12-02 18:39:06.350 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-02 18:39:06.351 +03:00 [INF] Hosting environment: Development
+2022-12-02 18:39:06.351 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars
+2022-12-02 18:39:06.839 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger - -
+2022-12-02 18:39:06.878 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger - - - 301 0 - 43.1722ms
+2022-12-02 18:39:06.884 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-02 18:39:06.998 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 113.6647ms
+2022-12-02 18:39:07.021 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/swagger-ui-bundle.js - -
+2022-12-02 18:39:07.021 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/swagger-ui.css - -
+2022-12-02 18:39:07.023 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/swagger-ui-standalone-preset.js - -
+2022-12-02 18:39:07.042 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-02 18:39:07.042 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-02 18:39:07.042 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-12-02 18:39:07.044 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/swagger-ui.css - - - 200 143943 text/css 23.3361ms
+2022-12-02 18:39:07.044 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 20.5805ms
+2022-12-02 18:39:07.044 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 23.2840ms
+2022-12-02 18:39:07.295 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-02 18:39:07.420 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 125.3479ms
+2022-12-02 18:39:31.353 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=True - -
+2022-12-02 18:39:31.368 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-02 18:39:31.396 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-02 18:39:32.552 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+ORDER BY c.id
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-02 18:39:32.619 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-12-02 18:39:32.651 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1250.7958ms
+2022-12-02 18:39:32.652 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-02 18:39:32.655 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=True - - - 200 1801 application/json;+charset=utf-8 1302.7150ms
+2022-12-02 18:39:42.530 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-02 18:39:42.531 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-02 18:39:42.531 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-02 18:39:42.563 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-02 18:39:42.564 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarsDTO'.
+2022-12-02 18:39:42.564 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 32.9548ms
+2022-12-02 18:39:42.564 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-02 18:39:42.565 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 1097 application/json;+charset=utf-8 34.1594ms
+2022-12-02 18:40:26.009 +03:00 [INF] Application is shutting down...
+2022-12-02 18:42:42.838 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-02 18:42:42.980 +03:00 [INF] Now listening on: http://localhost:8070
+2022-12-02 18:42:42.983 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-02 18:42:42.984 +03:00 [INF] Hosting environment: Development
+2022-12-02 18:42:42.984 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Cars
+2022-12-02 18:42:43.572 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-02 18:42:43.697 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 127.3232ms
+2022-12-02 18:42:43.940 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-02 18:42:44.063 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 123.5655ms
+2022-12-02 18:42:46.311 +03:00 [INF] Application is shutting down...

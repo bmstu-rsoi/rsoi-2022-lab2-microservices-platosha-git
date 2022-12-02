@@ -15,9 +15,8 @@ namespace APIGateway.Controllers
             _carsRepository = carsRepository;
         }
 
-        /// <summary>Get all Cars</summary>
-        /// <returns>Cars information</returns>
-        /// <response code="200">All Cars</response>
+        /// <summary>Получить список всех доступных для бронирования автомобилей</summary>
+        /// <response code="200">Список доступных для бронирования автомобилей</response>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationCarsDTO))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

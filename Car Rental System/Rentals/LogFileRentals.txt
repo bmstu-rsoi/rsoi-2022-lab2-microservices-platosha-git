@@ -624,3 +624,171 @@ ORDER BY r.id
 2022-11-30 19:36:05.753 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalsByUsername (Rentals)'
 2022-11-30 19:36:05.762 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/?X-User-Name=Glen - - - 200 805 application/json;+charset=utf-8 2042.9752ms
 2022-11-30 19:36:14.278 +03:00 [INF] Application is shutting down...
+2022-12-02 17:58:23.446 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-02 17:58:23.824 +03:00 [INF] Now listening on: http://localhost:8060
+2022-12-02 17:58:23.828 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-02 17:58:23.829 +03:00 [INF] Hosting environment: Development
+2022-12-02 17:58:23.830 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals
+2022-12-02 17:58:24.435 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger - -
+2022-12-02 17:58:24.490 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger - - - 301 0 - 58.7424ms
+2022-12-02 17:58:24.500 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/index.html - -
+2022-12-02 17:58:24.638 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/index.html - - - 200 - text/html;charset=utf-8 137.8643ms
+2022-12-02 17:58:24.666 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui.css - -
+2022-12-02 17:58:24.666 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-bundle.js - -
+2022-12-02 17:58:24.666 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-standalone-preset.js - -
+2022-12-02 17:58:24.696 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-02 17:58:24.696 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-02 17:58:24.696 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-12-02 17:58:24.698 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui.css - - - 200 143943 text/css 32.5699ms
+2022-12-02 17:58:24.698 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 31.9116ms
+2022-12-02 17:58:24.698 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 32.7164ms
+2022-12-02 17:58:24.954 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - -
+2022-12-02 17:58:25.155 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 200.3651ms
+2022-12-02 18:00:15.779 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c?X-User-Name=Glen - -
+2022-12-02 18:00:15.825 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:00:15.887 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller Rentals.Controllers.RentalsAPIController (Rentals).
+2022-12-02 18:00:16.273 +03:00 [ERR] + Error occurred trying GetRentalByRentalUid!
+System.NotImplementedException: The method or operation is not implemented.
+   at Rentals.Repositories.RentalsRepository.FindByRentalUid(String username, Guid RentalUid) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals\Repositories\RentalsRepository.cs:line 56
+   at Rentals.Controllers.RentalsWebController.GetRentalByRentalUid(String username, Guid RentalUid) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals\Controllers\RentalsWebController.cs:line 27
+   at Rentals.Controllers.RentalsAPIController.GetRentalByUid(String username, Guid rentalUid) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals\Controllers\RentalsAPIController.cs:line 106
+2022-12-02 18:00:16.283 +03:00 [INF] Executed action Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals) in 387.8901ms
+2022-12-02 18:00:16.287 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:00:16.312 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NotImplementedException: The method or operation is not implemented.
+   at Rentals.Repositories.RentalsRepository.FindByRentalUid(String username, Guid RentalUid) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals\Repositories\RentalsRepository.cs:line 56
+   at Rentals.Controllers.RentalsWebController.GetRentalByRentalUid(String username, Guid RentalUid) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals\Controllers\RentalsWebController.cs:line 27
+   at Rentals.Controllers.RentalsAPIController.GetRentalByUid(String username, Guid rentalUid) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals\Controllers\RentalsAPIController.cs:line 106
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-02 18:00:16.322 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c?X-User-Name=Glen - - - 500 - text/plain;+charset=utf-8 542.2188ms
+2022-12-02 18:00:31.048 +03:00 [INF] Application is shutting down...
+2022-12-02 18:07:42.172 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-02 18:07:42.351 +03:00 [INF] Now listening on: http://localhost:8060
+2022-12-02 18:07:42.355 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-02 18:07:42.356 +03:00 [INF] Hosting environment: Development
+2022-12-02 18:07:42.356 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals
+2022-12-02 18:07:42.786 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/index.html - -
+2022-12-02 18:07:42.949 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/index.html - - - 200 - text/html;charset=utf-8 168.9043ms
+2022-12-02 18:07:43.237 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - -
+2022-12-02 18:07:43.386 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 148.5192ms
+2022-12-02 18:07:50.358 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c?X-User-Name=Glen - -
+2022-12-02 18:07:50.391 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:07:50.432 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller Rentals.Controllers.RentalsAPIController (Rentals).
+2022-12-02 18:07:52.616 +03:00 [INF] Executed DbCommand (86ms) [Parameters=[@__username_0='?', @__RentalUid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.car_uid, r.date_from, r.date_to, r.payment_uid, r.rental_uid, r.status, r.username
+FROM rental AS r
+WHERE r.username = @__username_0 AND r.rental_uid = @__RentalUid_1
+LIMIT 1
+2022-12-02 18:07:52.660 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.RentalsDTO'.
+2022-12-02 18:07:52.710 +03:00 [INF] Executed action Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals) in 2270.4579ms
+2022-12-02 18:07:52.710 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:07:52.716 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c?X-User-Name=Glen - - - 200 256 application/json;+charset=utf-8 2357.5148ms
+2022-12-02 18:07:57.200 +03:00 [INF] Application is shutting down...
+2022-12-02 18:31:20.021 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-02 18:31:20.269 +03:00 [INF] Now listening on: http://localhost:8060
+2022-12-02 18:31:20.273 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-02 18:31:20.274 +03:00 [INF] Hosting environment: Development
+2022-12-02 18:31:20.274 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Rentals
+2022-12-02 18:31:20.752 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/index.html - -
+2022-12-02 18:31:20.884 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/index.html - - - 200 - text/html;charset=utf-8 134.9061ms
+2022-12-02 18:31:21.025 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - -
+2022-12-02 18:31:21.158 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 133.1012ms
+2022-12-02 18:31:55.148 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c/?X-User-Name=Glen - -
+2022-12-02 18:31:55.164 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:31:55.187 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller Rentals.Controllers.RentalsAPIController (Rentals).
+2022-12-02 18:31:56.268 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__username_0='?', @__RentalUid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.car_uid, r.date_from, r.date_to, r.payment_uid, r.rental_uid, r.status, r.username
+FROM rental AS r
+WHERE r.username = @__username_0 AND r.rental_uid = @__RentalUid_1
+LIMIT 1
+2022-12-02 18:31:56.294 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.RentalsDTO'.
+2022-12-02 18:31:56.320 +03:00 [INF] Executed action Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals) in 1129.3255ms
+2022-12-02 18:31:56.320 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:31:56.324 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c/?X-User-Name=Glen - - - 200 256 application/json;+charset=utf-8 1175.3475ms
+2022-12-02 18:32:05.482 +03:00 [INF] Application is shutting down...
+2022-12-02 18:39:14.900 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-02 18:39:15.081 +03:00 [INF] Now listening on: http://localhost:8060
+2022-12-02 18:39:15.085 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-02 18:39:15.086 +03:00 [INF] Hosting environment: Development
+2022-12-02 18:39:15.086 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Rentals
+2022-12-02 18:39:15.358 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/index.html - -
+2022-12-02 18:39:15.485 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/index.html - - - 200 - text/html;charset=utf-8 129.8626ms
+2022-12-02 18:39:15.637 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - -
+2022-12-02 18:39:15.774 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.0353ms
+2022-12-02 18:39:51.484 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/api/v1/rental/?X-User-Name=Glen - -
+2022-12-02 18:39:51.499 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalsByUsername (Rentals)'
+2022-12-02 18:39:51.523 +03:00 [INF] Route matched with {action = "GetRentalsByUsername", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalsByUsername(System.String) on controller Rentals.Controllers.RentalsAPIController (Rentals).
+2022-12-02 18:39:52.541 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.car_uid, r.date_from, r.date_to, r.payment_uid, r.rental_uid, r.status, r.username
+FROM rental AS r
+WHERE r.username = @__username_0
+ORDER BY r.id
+2022-12-02 18:39:52.606 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.PaginationRentalsDTO'.
+2022-12-02 18:39:52.635 +03:00 [INF] Executed action Rentals.Controllers.RentalsAPIController.GetRentalsByUsername (Rentals) in 1107.8737ms
+2022-12-02 18:39:52.636 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalsByUsername (Rentals)'
+2022-12-02 18:39:52.640 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/?X-User-Name=Glen - - - 200 805 application/json;+charset=utf-8 1156.2264ms
+2022-12-02 18:40:16.438 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c/?X-User-Name=Glen - -
+2022-12-02 18:40:16.439 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:40:16.442 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller Rentals.Controllers.RentalsAPIController (Rentals).
+2022-12-02 18:40:16.494 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__username_0='?', @__RentalUid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.car_uid, r.date_from, r.date_to, r.payment_uid, r.rental_uid, r.status, r.username
+FROM rental AS r
+WHERE r.username = @__username_0 AND r.rental_uid = @__RentalUid_1
+LIMIT 1
+2022-12-02 18:40:16.496 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.RentalsDTO'.
+2022-12-02 18:40:16.497 +03:00 [INF] Executed action Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals) in 54.2442ms
+2022-12-02 18:40:16.497 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:40:16.498 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c/?X-User-Name=Glen - - - 200 256 application/json;+charset=utf-8 59.4483ms
+2022-12-02 18:40:26.009 +03:00 [INF] Application is shutting down...
+2022-12-02 18:42:50.817 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-02 18:42:50.964 +03:00 [INF] Now listening on: http://localhost:8060
+2022-12-02 18:42:50.967 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-02 18:42:50.968 +03:00 [INF] Hosting environment: Development
+2022-12-02 18:42:50.968 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\Car Rental System\Rentals
+2022-12-02 18:42:51.609 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/index.html - -
+2022-12-02 18:42:51.736 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/index.html - - - 200 - text/html;charset=utf-8 131.3605ms
+2022-12-02 18:42:51.867 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - -
+2022-12-02 18:42:51.983 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 115.7735ms
+2022-12-02 18:43:27.953 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/api/v1/rental/?X-User-Name=Glen - -
+2022-12-02 18:43:27.969 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalsByUsername (Rentals)'
+2022-12-02 18:43:27.992 +03:00 [INF] Route matched with {action = "GetRentalsByUsername", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalsByUsername(System.String) on controller Rentals.Controllers.RentalsAPIController (Rentals).
+2022-12-02 18:43:28.976 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__username_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.car_uid, r.date_from, r.date_to, r.payment_uid, r.rental_uid, r.status, r.username
+FROM rental AS r
+WHERE r.username = @__username_0
+ORDER BY r.id
+2022-12-02 18:43:29.033 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelsDTO.Rentals.RentalsDTO, ModelsDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-02 18:43:29.061 +03:00 [INF] Executed action Rentals.Controllers.RentalsAPIController.GetRentalsByUsername (Rentals) in 1065.9431ms
+2022-12-02 18:43:29.062 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalsByUsername (Rentals)'
+2022-12-02 18:43:29.066 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/?X-User-Name=Glen - - - 200 775 application/json;+charset=utf-8 1112.6491ms
+2022-12-02 18:43:46.175 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c/?X-User-Name=Glen - -
+2022-12-02 18:43:46.175 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:43:46.179 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller Rentals.Controllers.RentalsAPIController (Rentals).
+2022-12-02 18:43:46.227 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__username_0='?', @__RentalUid_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT r.id, r.car_uid, r.date_from, r.date_to, r.payment_uid, r.rental_uid, r.status, r.username
+FROM rental AS r
+WHERE r.username = @__username_0 AND r.rental_uid = @__RentalUid_1
+LIMIT 1
+2022-12-02 18:43:46.229 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.RentalsDTO'.
+2022-12-02 18:43:46.230 +03:00 [INF] Executed action Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals) in 51.1081ms
+2022-12-02 18:43:46.230 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
+2022-12-02 18:43:46.231 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/8b33afd0-9850-41c8-8325-32b5ea91759c/?X-User-Name=Glen - - - 200 256 application/json;+charset=utf-8 56.1208ms
+2022-12-02 18:43:51.767 +03:00 [INF] Application is shutting down...

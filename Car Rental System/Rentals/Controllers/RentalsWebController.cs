@@ -22,9 +22,9 @@ namespace Rentals.Controllers
             return await _rentalsRepository.FindByName(username);
         }
         
-        public async Task<Rental> GetRentalByRentalUid(string username, Guid RentalUid)
+        public async Task<Rental?> GetRentalByRentalUid(string username, Guid rentalUid)
         {
-            return await _rentalsRepository.FindByRentalUid(username, RentalUid);
+            return await _rentalsRepository.FindByRentalUid(username, rentalUid);
         }
     }
 }

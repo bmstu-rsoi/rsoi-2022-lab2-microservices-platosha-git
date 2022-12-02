@@ -51,22 +51,14 @@ namespace Rentals.Repositories
             }
         }
 
-        public Task<Rental> FindByRentalUid(string username, Guid RentalUid)
-        {
-            throw new NotImplementedException();
-        }
-
-        /*public async Task<Rental> FindByRentalUid(string username, Guid RentalUid)
+        public async Task<Rental?> FindByRentalUid(string username, Guid RentalUid)
         {
             try
             {
-                var rentals = await _db.Rentals
-                    .Where(x => x.Username == username && x.RentalUid.Equals(RentalUid))
-                    .OrderBy(x => x.Id)
-                    .Skip((page - 1) * size)
-                    .Take(size)
-                    .ToListAsync();
-                return rentals;
+                var rental = await _db.Rentals
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(x => x.Username == username && x.RentalUid.Equals(RentalUid));
+                return rental;
             }
             catch (Exception e)
             {
@@ -75,7 +67,6 @@ namespace Rentals.Repositories
                 throw;
             }
         }
-        */
 
         public void Dispose()
         {

@@ -18,11 +18,10 @@ namespace Rentals.Controllers
             _rentalsController = rentalsController;
             _logger = logger;
         }
-        
-        private List<RentalsDTO> ListRentalsDTO(List<Rental> lRentals)
+
+        private RentalsDTO? InitRentalsDTO(Rental? rental)
         {
-            List<RentalsDTO> lRentalsDTO = new List<RentalsDTO>();
-            foreach (var rental in lRentals)
+            if (rental != null)
             {
                 RentalsDTO rentalDTO = new RentalsDTO()
                 {
@@ -34,7 +33,19 @@ namespace Rentals.Controllers
                     DateTo = rental.DateTo,
                     Status = rental.Status
                 };
-                
+
+                return rentalDTO;
+            }
+
+            return null;
+        }
+        
+        private List<RentalsDTO> ListRentalsDTO(List<Rental> lRentals)
+        {
+            List<RentalsDTO> lRentalsDTO = new List<RentalsDTO>();
+            foreach (var rental in lRentals)
+            {
+                RentalsDTO rentalDTO = InitRentalsDTO(rental);
                 lRentalsDTO.Add(rentalDTO);
             }
 
@@ -71,20 +82,14 @@ namespace Rentals.Controllers
         /// <param name="size"> Number of elements per page </param>
         /// <returns>Rentals information</returns>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationRentalsDTO))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<RentalsDTO>))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetRentalsByUsername([Required, FromQuery(Name = "X-User-Name")] string username)
         {
             try
             {
                 var rentals = await _rentalsController.GetRentalsByUsername(username);
-
-                var response = new PaginationRentalsDTO()
-                {
-                    TotalElements = rentals.Count,
-                    Rentals = ListRentalsDTO(rentals)
-                };
-
+                var response = ListRentalsDTO(rentals);
                 return Ok(response);
             }
             catch (Exception e)
@@ -94,27 +99,30 @@ namespace Rentals.Controllers
             }
         }
         
-        // [HttpGet("{rentalUid:guid}")]
-        // [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
-        // [ProducesResponseType(StatusCodes.Status404NotFound)]
-        // [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        // public async Task<IActionResult> GetRentalByUid([Required, FromHeader(Name = "X-User-Name")] string username,
-        //     Guid rentalUid)
-        // {
-        //     try
-        //     {
-        //         var rental = await _rentalsController.GetRentalByRentalUid(username, rentalUid);
-        //         return Ok(rental);
-        //     }
-        //     catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
-        //     {
-        //         return NotFound(username);
-        //     }
-        //     catch (Exception e)
-        //     {
-        //         _logger.LogError(e, "+ Error occurred trying GetRentalByRentalUid!");
-        //         throw;
-        //     }
-        // }
+        // Glen
+        // 8b33afd0-9850-41c8-8325-32b5ea91759c
+        [HttpGet("{rentalUid:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetRentalByUid([Required, FromQuery(Name = "X-User-Name")] string username,
+            Guid rentalUid)
+        {
+            try
+            {
+                var rental = await _rentalsController.GetRentalByRentalUid(username, rentalUid);
+                var response = InitRentalsDTO(rental);
+                return Ok(response);
+            }
+            catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
+            {
+                return NotFound(username);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error occurred trying GetRentalByRentalUid!");
+                throw;
+            }
+        }
     }
 }

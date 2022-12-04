@@ -17,7 +17,7 @@ namespace Rentals.Controllers
             return await _rentalsRepository.FindAll(page, size);
         }
         
-        public async Task<List<Rental>> GetRentalsByUsername(string username)
+        public async Task<List<Rental>> GetAllRentalsByUsername(string username)
         {
             return await _rentalsRepository.FindByName(username);
         }
@@ -25,6 +25,16 @@ namespace Rentals.Controllers
         public async Task<Rental?> GetRentalByRentalUid(string username, Guid rentalUid)
         {
             return await _rentalsRepository.FindByRentalUid(username, rentalUid);
+        }
+
+        public async Task<Rental> AddRental(Rental rental)
+        {
+            return await _rentalsRepository.Add(rental);
+        }
+        
+        public async Task PatchRental(Rental rental)
+        {
+            await _rentalsRepository.Patch(rental);
         }
     }
 }

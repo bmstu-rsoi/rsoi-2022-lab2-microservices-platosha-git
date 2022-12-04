@@ -32,4 +32,8 @@
       <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ModelsDTO\ModelsDTO.csproj" />
+    </ItemGroup>
+
 </Project>

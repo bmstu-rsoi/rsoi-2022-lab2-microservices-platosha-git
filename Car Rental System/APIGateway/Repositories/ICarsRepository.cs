@@ -4,5 +4,6 @@ namespace APIGateway;
 
 public interface ICarsRepository
 {
-    Task<PaginationCarsDTO?> FindAll(int page, int size, bool showAll);
+    Task<PaginationCarResponse?> GetAllAsync(int page, int size, bool showAll);
+    Task<CarResponse> GetAsyncByUid(Guid carUid);
 }

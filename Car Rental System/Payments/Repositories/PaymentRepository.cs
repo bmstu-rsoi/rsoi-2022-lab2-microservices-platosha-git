@@ -1,4 +1,5 @@
-﻿using Payments.ModelsDB;
+﻿using Microsoft.EntityFrameworkCore;
+using Payments.ModelsDB;
 
 namespace Payments.Repositories
 {
@@ -13,10 +14,20 @@ namespace Payments.Repositories
             _logger = logDb;
         }
 
-        public List<Payment> FindAll()
+        public async Task<Payment> FindByUid(Guid paymentUid)
         {
-            var payments = _db.Payments.ToList();
-            return payments;
+            try
+            {
+                var payment = await _db.Payments
+                    .FirstOrDefaultAsync(x => x.PaymentUid == paymentUid);
+                return payment;
+
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error while trying to FindByUid");
+                throw;
+            }
         }
 
         public void Dispose()

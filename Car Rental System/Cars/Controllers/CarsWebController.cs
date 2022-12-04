@@ -21,5 +21,10 @@ namespace Cars.Controllers
         {
             return await _carsRepository.FindAvailable(page, size);
         }
+        
+        public async Task<Car> GetCarByUid(Guid carUid)
+        {
+            return await _carsRepository.FindByUid(carUid);
+        }
     }
 }

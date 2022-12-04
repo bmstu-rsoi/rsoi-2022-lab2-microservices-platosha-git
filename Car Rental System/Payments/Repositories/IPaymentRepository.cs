@@ -2,14 +2,8 @@
 
 namespace Payments.Repositories
 {
-    public enum ExitCode
-    {
-        Success,
-        Error
-    }
-
     public interface IPaymentsRepository
     {
-        List<Payment> FindAll();
+        Task<Payment> FindByUid(Guid paymentUid);
     }
 }

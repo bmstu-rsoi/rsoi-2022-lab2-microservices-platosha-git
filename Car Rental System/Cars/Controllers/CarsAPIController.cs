@@ -16,47 +16,66 @@ namespace Cars.Controllers
             _carsController = carsController;
         }
 
-        private List<CarsDTO> ListCarsDTO(List<Car> lCars)
+        private CarResponse InitCarResponse(Car car)
         {
-            List<CarsDTO> lCarsDTO = new List<CarsDTO>();
-            foreach (var car in lCars)
+            CarResponse carResponse = new CarResponse()
             {
-                CarsDTO carDTO = new CarsDTO()
-                {
-                    CarUid = car.CarUid,
-                    Brand = car.Brand,
-                    Model = car.Model, 
-                    RegistrationNumber = car.RegistrationNumber,
-                    Power = car.Power,
-                    Price = car.Price,
-                    Type = car.Type,
-                    Availability = car.Availability
-                };
-                lCarsDTO.Add(carDTO);
-            }
-
-            return lCarsDTO;
+                CarUid = car.CarUid,
+                Brand = car.Brand,
+                Model = car.Model, 
+                RegistrationNumber = car.RegistrationNumber,
+                Power = car.Power,
+                Price = car.Price,
+                Type = car.Type,
+                Available = car.Availability
+            };
+            return carResponse;
         }
 
-        /// <summary>Get all Cars</summary>
+        private List<CarResponse> ListCarResponse(List<Car> lCars)
+        {
+            List<CarResponse> lCarsResponse = new List<CarResponse>();
+            foreach (var car in lCars)
+            {
+                var carResponse = InitCarResponse(car);
+                lCarsResponse.Add(carResponse);
+            }
+
+            return lCarsResponse;
+        }
+
+        /// <summary>Получить список всех доступных для бронирования автомобилей</summary>
         /// <param name="page"> Page number </param>
         /// <param name="size"> Number of elements per page </param>
-        /// <returns>Cars information</returns>
+        /// <returns>Список доступных для бронирования автомобилей</returns>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationCarsDTO))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationCarResponse))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAllCars([Range(1, int.MaxValue)] int page, [Range(1, 100)] int size, bool showAll)
         {
             var cars = (showAll) ? await _carsController.GetAllCars(page, size) : 
                     await _carsController.GetAvailableCars(page, size);
 
-            var response = new PaginationCarsDTO()
+            var response = new PaginationCarResponse()
             {
                 PageSize = size,
                 Page = page,
                 TotalElements = cars.Count,
-                Cars = ListCarsDTO(cars)
+                Cars = ListCarResponse(cars)
             };
+            
+            return Ok(response);
+        }
+        
+        /// <summary>Получить автомобиль по Uuid</summary>
+        /// <returns>Список доступных для бронирования автомобилей</returns>
+        [HttpGet("{carUid}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetCarByUid(Guid carUid)
+        {
+            var car = await _carsController.GetCarByUid(carUid);
+            var response = InitCarResponse(car);
             
             return Ok(response);
         }

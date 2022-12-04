@@ -28,7 +28,6 @@ namespace Cars.Repositories
             catch (Exception e)
             {
                 _logger.LogError(e, "+ Error while trying to FindAll");
-                Console.WriteLine(e);
                 throw;
             }
         }
@@ -48,7 +47,21 @@ namespace Cars.Repositories
             catch (Exception e)
             {
                 _logger.LogError(e, "+ Error while trying to FindAvailable");
-                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public async Task<Car> FindByUid(Guid carUid)
+        {
+            try
+            {
+                var car = await _db.Cars
+                    .FirstOrDefaultAsync(x => x.CarUid == carUid);
+                return car;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error while trying to FindByUid");
                 throw;
             }
         }

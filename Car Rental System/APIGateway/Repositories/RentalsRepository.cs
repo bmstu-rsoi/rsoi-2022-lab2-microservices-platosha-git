@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System.Net.Http;
+using System.Web;
+using APIGateway.ModelsDTO;
 using ModelsDTO.Rentals;
 
 namespace APIGateway;
@@ -14,8 +16,8 @@ public class RentalsRepository : IRentalsRepository
         _httpClient.BaseAddress = new Uri("http://localhost:8060");
         _logger = logger;
     }
-
-    public async Task<List<RentalsDTO>?> FindAllByUsername(string username)
+    
+    public async Task<List<RentalsDTO>?> GetAllAsyncByUsername(string username)
     {
         var query = HttpUtility.ParseQueryString(string.Empty);
         query["X-User-Name"] = username;
@@ -26,7 +28,7 @@ public class RentalsRepository : IRentalsRepository
         return await response.Content.ReadFromJsonAsync<List<RentalsDTO>>();
     }
 
-    public async Task<RentalsDTO?> FindByUsernameAndUid(string username, Guid rentalUid)
+    /*public async Task<RentalsDTO?> FindByUsernameAndUid(string username, Guid rentalUid)
     {
         var query = HttpUtility.ParseQueryString(string.Empty);
         query["X-User-Name"] = username;
@@ -36,4 +38,13 @@ public class RentalsRepository : IRentalsRepository
 
         return await response.Content.ReadFromJsonAsync<RentalsDTO?>();
     }
+
+    public async Task<RentalsDTO?> CreateRental(RentalsDTO rental)
+    {
+        var response = await _httpClient.PostAsJsonAsync("/api/v1/rental/", rental);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RentalsDTO>();
+    }
+    */
 }

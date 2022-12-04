@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net;
+using APIGateway.Domain;
+using APIGateway.ModelsDTO;
 using Microsoft.AspNetCore.Mvc;
 using ModelsDTO.Rentals;
 
@@ -9,12 +11,12 @@ namespace APIGateway.Controllers
     [Route("/api/v1/rental")]
     public class RentalsAPIController : ControllerBase
     {
-        private readonly RentalsRepository _rentalsRepository;
+        private readonly IRentalsService _rentalsService;
         private readonly ILogger<RentalsRepository> _logger;
 
-        public RentalsAPIController(RentalsRepository rentalsRepository, ILogger<RentalsRepository> logger)
+        public RentalsAPIController(IRentalsService rentalsService, ILogger<RentalsRepository> logger)
         {
-            _rentalsRepository = rentalsRepository;
+            _rentalsService = rentalsService;
             _logger = logger;
         }
 
@@ -22,23 +24,24 @@ namespace APIGateway.Controllers
         /// <param name="X-User-Name">Имя пользователя</param>
         /// <response code="200">Информация обо всех арендах</response>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<RentalsDTO>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<RentalResponse>))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAllRentalsByUsername([Required, FromHeader(Name = "X-User-Name")] string username)
+        public async Task<IActionResult> GetAllRentalsByUsername(
+            [Required, FromHeader(Name = "X-User-Name")] string username)
         {
             try
             {
-                var response = await _rentalsRepository.FindAllByUsername(username);
-                return Ok(response);
+                var rentals = await _rentalsService.GetAllAsync(username);
+                return Ok(rentals);
             }
             catch (Exception e)
             {
                 _logger.LogError(e, "+ Error occurred trying GetAllRentalsByUsername!");
                 throw;
             }
-            
+
         }
-        
+
         /// <summary>Информация по конкретной аренде пользователя</summary>
         /// <param name="rentalUid">UUID аренды</param>
         /// <param name="X-User-Name">Имя пользователя</param>
@@ -46,7 +49,7 @@ namespace APIGateway.Controllers
         /// <response code="404">Билет не найден</response>
         // Glen
         // 8b33afd0-9850-41c8-8325-32b5ea91759c
-        [HttpGet("{rentalUid:guid}")]
+        /*[HttpGet("{rentalUid:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -55,7 +58,7 @@ namespace APIGateway.Controllers
         {
             try
             {
-                var response = await _rentalsRepository.FindByUsernameAndUid(username, rentalUid);
+                var response = await _rentalsService.FindByUsernameAndUid(username, rentalUid);
                 return Ok(response);
             }
             catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
@@ -68,5 +71,37 @@ namespace APIGateway.Controllers
                 throw;
             }
         }
+        
+        /// <summary>Забронировать автомобиль</summary>
+        /// <param name="X-User-Name">Имя пользователя</param>
+        /// <response code="200">Информация о бронировании авто</response>
+        /// <response code="400">Ошибка валидации данных</response>
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CreateRentalResponse))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> BookCar([Required, FromHeader(Name = "X-User-Name")] string username,
+            [FromBody] CreateRentalRequest request)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var response = await _rentalsService.BookCar(username, request);
+                return Ok(response);
+            }
+            catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
+            {
+                return NotFound(e.Message);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error occurred trying BookCar!");
+                throw;
+            }
+        }*/
     }
 }

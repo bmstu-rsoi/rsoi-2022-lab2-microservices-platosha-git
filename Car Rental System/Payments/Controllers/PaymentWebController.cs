@@ -12,9 +12,9 @@ namespace Payments.Controllers
             _paymentsRepository = paymentsRepository;
         }
 
-        public List<Payment> GetAllPayments()
+        public async Task<Payment> GetPaymentByUid(Guid paymentUid)
         {
-            return _paymentsRepository.FindAll();
+            return await _paymentsRepository.FindByUid(paymentUid);
         }
     }
 }

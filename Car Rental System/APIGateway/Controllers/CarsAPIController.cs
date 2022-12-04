@@ -18,11 +18,11 @@ namespace APIGateway.Controllers
         /// <summary>Получить список всех доступных для бронирования автомобилей</summary>
         /// <response code="200">Список доступных для бронирования автомобилей</response>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationCarsDTO))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationCarResponse))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAllCars([Range(1, 10)] int page, [Range(1, 10)] int size, bool showAll)
         {
-            var response = await _carsRepository.FindAll(page, size, showAll);
+            var response = await _carsRepository.GetAllAsync(page, size, showAll);
             return Ok(response);
         }
     }

@@ -14,11 +14,19 @@ public class CarsRepository : ICarsRepository
         _logger = logger;
     }
 
-    public async Task<PaginationCarsDTO?> FindAll(int page, int size, bool showAll)
+    public async Task<PaginationCarResponse?> GetAllAsync(int page, int size, bool showAll)
     {
         var response = await _httpClient.GetAsync($"/api/v1/cars/?page={page}&size={size}&showAll={showAll}");
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<PaginationCarsDTO>();
+        return await response.Content.ReadFromJsonAsync<PaginationCarResponse>();
+    }
+    
+    public async Task<CarResponse> GetAsyncByUid(Guid carUid)
+    {
+        var response = await _httpClient.GetAsync($"/api/v1/cars/{carUid}");
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CarResponse>();
     }
 }

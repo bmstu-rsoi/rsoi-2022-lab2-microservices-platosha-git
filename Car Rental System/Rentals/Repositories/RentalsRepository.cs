@@ -68,6 +68,42 @@ namespace Rentals.Repositories
             }
         }
 
+        public async Task<Rental> Add(Rental obj)
+        {
+            try
+            {
+                var id = await _db.Rentals.CountAsync() + 1;
+                obj.Id = id;
+
+                _db.Rentals.Add(obj);
+                await _db.SaveChangesAsync();
+
+                _logger.LogInformation("+RentalsRep : Rental {Number} was added to Rentals", obj.Id);
+                return obj;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+RentalsRep : Error trying to add rental to Rentals");
+                throw;
+            }
+        }
+
+        public async Task Patch(Rental obj)
+        {
+            try
+            {
+                _db.Rentals.Update(obj);
+                await _db.SaveChangesAsync();
+            
+                _logger.LogInformation("+RentalsRep : Rental {Number} was patched at Rentals", obj.Id);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+RentalsRep : Error trying to patch rental to Rentals");
+                throw;
+            }
+        }
+
         public void Dispose()
         {
             _db.Dispose();

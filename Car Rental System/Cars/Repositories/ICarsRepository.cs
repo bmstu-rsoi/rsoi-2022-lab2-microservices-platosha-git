@@ -7,5 +7,6 @@ namespace Cars.Repositories
         Task<List<Car>> FindAll(int page, int size);
         Task<List<Car>> FindAvailable(int page, int size);
         Task<Car> FindByUid(Guid carUid);
+        Task Patch(Car obj);
     }
 }

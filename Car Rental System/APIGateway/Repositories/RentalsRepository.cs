@@ -28,7 +28,7 @@ public class RentalsRepository : IRentalsRepository
         return await response.Content.ReadFromJsonAsync<List<RentalsDTO>>();
     }
 
-    /*public async Task<RentalsDTO?> FindByUsernameAndUid(string username, Guid rentalUid)
+    public async Task<RentalsDTO?> GetAsyncByUsernameAndRentalUid(string username, Guid rentalUid)
     {
         var query = HttpUtility.ParseQueryString(string.Empty);
         query["X-User-Name"] = username;
@@ -38,13 +38,22 @@ public class RentalsRepository : IRentalsRepository
 
         return await response.Content.ReadFromJsonAsync<RentalsDTO?>();
     }
-
-    public async Task<RentalsDTO?> CreateRental(RentalsDTO rental)
+    
+    public async Task<RentalsDTO> CreateAsync(RentalsDTO rentalDTO)
     {
-        var response = await _httpClient.PostAsJsonAsync("/api/v1/rental/", rental);
+        var response = await _httpClient.PostAsJsonAsync("/api/v1/rental/", rentalDTO);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<RentalsDTO>();
     }
-    */
+
+    public async Task<RentalsDTO> ProcessRent(string username, Guid rentalUid, string status)
+    {
+        var request = new HttpRequestMessage(new HttpMethod("PATCH"),
+            $"/api/v1/rental/{username}/{rentalUid}/{status}");
+        var response = await _httpClient.SendAsync(request);
+        
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<RentalsDTO>();
+    }
 }

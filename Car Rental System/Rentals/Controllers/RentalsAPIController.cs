@@ -20,6 +20,22 @@ namespace Rentals.Controllers
             _logger = logger;
         }
 
+        private Rental GetRentalFromDTO(RentalsDTO rentalDTO)
+        {
+            var rental = new Rental()
+            {
+                Id = 0,
+                RentalUid = rentalDTO.RentalUid,
+                Username = rentalDTO.Username,
+                PaymentUid = rentalDTO.PaymentUid,
+                CarUid = rentalDTO.CarUid,
+                DateFrom = rentalDTO.DateFrom,
+                DateTo = rentalDTO.DateTo,
+                Status = rentalDTO.Status
+            };
+            return rental;
+        }
+
         private RentalsDTO? InitRentalsDTO(Rental? rental)
         {
             if (rental == null) return null;
@@ -70,8 +86,7 @@ namespace Rentals.Controllers
                 throw;
             }
         }
-        /*
-        
+
         // Glen
         // 8b33afd0-9850-41c8-8325-32b5ea91759c
         [HttpGet("{rentalUid:guid}")]
@@ -99,55 +114,28 @@ namespace Rentals.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RentalsDTO))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Post([FromBody] RentalsDTO rentalDTO)
+        public async Task<IActionResult> CreateRental([FromBody] RentalsDTO rentalDTO)
         {
-            try
-            {
-                var rental = GetRental(rentalDTO);
-                var response = await _rentalsController.AddRental(rental);
+            var rentalToAdd = GetRentalFromDTO(rentalDTO);
+            var addedRental = await _rentalsController.AddRental(rentalToAdd);
 
-                if (response is null)
-                {
-                    return BadRequest();
-                }
-                
-                var header = $"api/v1/rental/{response.Id}";
-                return Created(header, rental);
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "+ Error occurred trying AddRental!");
-                throw;
-            }
+            var response = InitRentalsDTO(addedRental);
+            return Created($"/api/v1/{addedRental.Id}", response);
         }
         
-        [HttpPatch("{rentalUid:guid}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpPatch("{username}/{rentalUid}/{status}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> FinishRent([Required, FromQuery(Name = "X-User-Name")] string username,
-            Guid rentalUid)
+        public async Task<IActionResult> FinishRent(string username, Guid rentalUid, string status)
         {
-            try
-            {
-                var rental = await _rentalsController.GetRentalByRentalUid(username, rentalUid);
-                if (rental == null)
-                {
-                    return NotFound();
-                }
+            var rental = await _rentalsController.GetRentalByRentalUid(username, rentalUid);
+            rental.Status = status;
+            await _rentalsController.FinishRent(rental);
 
-                rental.Status = "FINISHED";
-                await _rentalsController.PatchRental(rental);
-                return Ok();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "+ Error occurred trying FinishRent!");
-                throw;
-            }
-        }*/
+            var response = InitRentalsDTO(rental);
+            return Ok(response);
+        }
     }
 }

@@ -29,4 +29,13 @@ public class CarsRepository : ICarsRepository
 
         return await response.Content.ReadFromJsonAsync<CarResponse>();
     }
+
+    public async Task<CarResponse> ReserveCar(Guid carUid, bool availability)
+    {
+        var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"/api/v1/cars/{carUid}/?availability={availability}");
+        var response = await _httpClient.SendAsync(request);
+        
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<CarResponse>();
+    }
 }

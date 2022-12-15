@@ -32,7 +32,7 @@ namespace Rentals.Controllers
             return await _rentalsRepository.Add(rental);
         }
         
-        public async Task PatchRental(Rental rental)
+        public async Task FinishRent(Rental rental)
         {
             await _rentalsRepository.Patch(rental);
         }

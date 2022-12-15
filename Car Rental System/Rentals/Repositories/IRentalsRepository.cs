@@ -7,7 +7,7 @@ namespace Rentals.Repositories
         Task<List<Rental>> FindAll(int page, int size);
         Task<List<Rental>> FindByName(string username);
         Task<Rental?> FindByRentalUid(string username, Guid rentalUid);
-        Task<Rental> Add(Rental rental);
+        Task<Rental> Add(Rental obj);
         Task Patch(Rental rental);
     }
 }

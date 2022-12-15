@@ -79,5 +79,20 @@ namespace Cars.Controllers
             
             return Ok(response);
         }
+
+        /// <summary>Забронировать автомобиль по Uuid</summary>
+        /// <returns>Забронированный автомобиль</returns>
+        [HttpPatch("{carUid}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CarResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> ReserveCarByUid(Guid carUid, bool availability)
+        {
+            var car = await _carsController.GetCarByUid(carUid);
+            car.Availability = availability;
+            await _carsController.ReserveCarByUid(car);
+            
+            var response = InitCarResponse(car);
+            return Ok(response);
+        }
     }
 }

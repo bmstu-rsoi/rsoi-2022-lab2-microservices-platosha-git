@@ -66,6 +66,20 @@ namespace Cars.Repositories
             }
         }
 
+        public async Task Patch(Car obj)
+        {
+            try
+            {
+                _db.Cars.Update(obj);
+                await _db.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error while trying to Patch");
+                throw;
+            }
+        }
+
         public void Dispose()
         {
             _db.Dispose();

@@ -26,5 +26,10 @@ namespace Cars.Controllers
         {
             return await _carsRepository.FindByUid(carUid);
         }
+
+        public async Task ReserveCarByUid(Car car)
+        {
+            await _carsRepository.Patch(car);
+        }
     }
 }

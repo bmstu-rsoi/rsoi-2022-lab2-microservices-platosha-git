@@ -72,13 +72,17 @@ namespace Rentals.Repositories
         {
             try
             {
-                var id = await _db.Rentals.CountAsync() + 1;
+                var id = _db.Rentals.Count() + 1;
                 obj.Id = id;
 
+                if (obj.RentalUid == default)
+                    obj.RentalUid = Guid.NewGuid();
+                if (obj.PaymentUid == default)
+                    obj.PaymentUid = Guid.NewGuid();
+                
                 _db.Rentals.Add(obj);
                 await _db.SaveChangesAsync();
-
-                _logger.LogInformation("+RentalsRep : Rental {Number} was added to Rentals", obj.Id);
+                
                 return obj;
             }
             catch (Exception e)

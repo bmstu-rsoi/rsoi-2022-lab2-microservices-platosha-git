@@ -39,7 +39,6 @@ namespace APIGateway.Controllers
                 _logger.LogError(e, "+ Error occurred trying GetAllRentalsByUsername!");
                 throw;
             }
-
         }
 
         /// <summary>Информация по конкретной аренде пользователя</summary>
@@ -71,6 +70,7 @@ namespace APIGateway.Controllers
                 throw;
             }
         }
+        */
         
         /// <summary>Забронировать автомобиль</summary>
         /// <param name="X-User-Name">Имя пользователя</param>
@@ -90,7 +90,7 @@ namespace APIGateway.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var response = await _rentalsService.BookCar(username, request);
+                var response = await _rentalsService.RentCar(username, request);
                 return Ok(response);
             }
             catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
@@ -102,6 +102,62 @@ namespace APIGateway.Controllers
                 _logger.LogError(e, "+ Error occurred trying BookCar!");
                 throw;
             }
-        }*/
+        }
+
+        /// <summary> Завершение аренды автомобиля </summary>
+        /// <param name="rentalUid"> UUID аренды </param>
+        /// <param name="X-User-Name"> Имя пользователя </param>
+        /// <response code="200"> Аренда успешно завершена </response>
+        /// <response code="404"> Аренда не найдена </response>
+        [HttpPost("{rentalUid}/finish")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> FinishBookCar([Required, FromHeader(Name = "X-User-Name")] string username,
+            [FromRoute] Guid rentalUid)
+        {
+            try
+            {
+                await _rentalsService.FinishRent(username, rentalUid);
+                return Ok();
+            }
+            catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
+            {
+                return NotFound(e.Message);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error occurred trying FinishBookCar!");
+                throw;
+            }
+        }
+
+        /// <summary> Отмена аренды автомобиля </summary>
+        /// <param name="rentalUid"> UUID аренды </param>
+        /// <param name="X-User-Name"> Имя пользователя </param>
+        /// <response code="204"> Аренда успешно отменена </response>
+        /// <response code="404"> Аренда не найдена </response>
+        [HttpDelete("{rentalUid}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CancelBookCar([Required, FromHeader(Name = "X-User-Name")] string username,
+            [FromRoute] Guid rentalUid)
+        {
+            try
+            {
+                await _rentalsService.CancelRent(username, rentalUid);
+                return NoContent();
+            }
+            catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
+            {
+                return NotFound(e.Message);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error occurred trying FinishBookCar!");
+                throw;
+            }
+        }
     }
 }

@@ -346,3 +346,282 @@ LIMIT 1
 2022-12-04 23:50:02.593 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
 2022-12-04 23:50:02.593 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payment/ab9d27b4-9867-4c6e-a78e-21f751ee6117 - - - 200 84 application/json;+charset=utf-8 96.8843ms
 2022-12-04 23:50:15.483 +03:00 [INF] Application is shutting down...
+2022-12-09 23:01:24.903 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-09 23:01:25.080 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-09 23:01:25.084 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-09 23:01:25.085 +03:00 [INF] Hosting environment: Development
+2022-12-09 23:01:25.085 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-09 23:01:25.328 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger - -
+2022-12-09 23:01:25.361 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger - - - 301 0 - 36.2334ms
+2022-12-09 23:01:25.367 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-09 23:01:25.459 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 92.6567ms
+2022-12-09 23:01:25.480 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui.css - -
+2022-12-09 23:01:25.480 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-bundle.js - -
+2022-12-09 23:01:25.481 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-standalone-preset.js - -
+2022-12-09 23:01:25.499 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-09 23:01:25.499 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-12-09 23:01:25.499 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-09 23:01:25.500 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 18.7997ms
+2022-12-09 23:01:25.500 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 19.8980ms
+2022-12-09 23:01:25.500 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/swagger-ui.css - - - 200 143943 text/css 20.4241ms
+2022-12-09 23:01:25.699 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-09 23:01:25.812 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 112.6542ms
+2022-12-09 23:04:50.358 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 95
+2022-12-09 23:04:50.374 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:04:50.396 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:04:51.373 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-09 23:04:51.434 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-09 23:04:51.458 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 1057.3524ms
+2022-12-09 23:04:51.458 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:04:51.461 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 95 - 200 82 application/json;+charset=utf-8 1102.1684ms
+2022-12-09 23:05:15.974 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 95
+2022-12-09 23:05:15.975 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:05:15.976 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:05:15.982 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-09 23:05:15.983 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-09 23:05:15.983 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 7.6887ms
+2022-12-09 23:05:15.984 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:05:15.984 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 95 - 200 82 application/json;+charset=utf-8 9.5402ms
+2022-12-09 23:06:22.894 +03:00 [INF] Application is shutting down...
+2022-12-09 23:07:13.192 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-09 23:07:13.323 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-09 23:07:13.326 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-09 23:07:13.327 +03:00 [INF] Hosting environment: Development
+2022-12-09 23:07:13.327 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-09 23:07:13.881 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-09 23:07:14.005 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 126.1706ms
+2022-12-09 23:07:14.214 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-09 23:07:14.322 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 108.4874ms
+2022-12-09 23:07:35.359 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 94
+2022-12-09 23:07:35.374 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:07:35.396 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:07:36.291 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-09 23:07:36.356 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-09 23:07:36.379 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 979.1911ms
+2022-12-09 23:07:36.379 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:07:36.382 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 94 - 200 81 application/json;+charset=utf-8 1023.4397ms
+2022-12-09 23:09:11.323 +03:00 [INF] Application is shutting down...
+2022-12-09 23:09:14.063 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-09 23:09:14.200 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-09 23:09:14.204 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-09 23:09:14.205 +03:00 [INF] Hosting environment: Development
+2022-12-09 23:09:14.205 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-09 23:09:14.829 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-09 23:09:14.977 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 150.9271ms
+2022-12-09 23:09:15.139 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-09 23:09:15.270 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 130.6493ms
+2022-12-09 23:09:30.186 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 94
+2022-12-09 23:09:30.203 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:09:30.225 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:09:31.172 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-09 23:09:31.243 +03:00 [INF] Executing CreatedResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-09 23:09:31.269 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 1040.1258ms
+2022-12-09 23:09:31.269 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:09:31.272 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 94 - 201 81 application/json;+charset=utf-8 1085.4066ms
+2022-12-09 23:09:58.029 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/api/v1/payment/3fa85f64-5717-4562-b3fc-2c963f66af12 - -
+2022-12-09 23:09:58.030 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-09 23:09:58.034 +03:00 [INF] Route matched with {action = "GetPaymentByUid", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaymentByUid(System.Guid) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:09:58.107 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__paymentUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+WHERE p.payment_uid = @__paymentUid_0
+LIMIT 1
+2022-12-09 23:09:58.124 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments) in 89.7868ms
+2022-12-09 23:09:58.124 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-09 23:09:58.175 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Payments.Controllers.PaymentsAPIController.InitPaymentInfo(Payment payment) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments\Controllers\PaymentsAPIController.cs:line 32
+   at Payments.Controllers.PaymentsAPIController.GetPaymentByUid(Guid paymentUid) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments\Controllers\PaymentsAPIController.cs:line 48
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-09 23:09:58.178 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payment/3fa85f64-5717-4562-b3fc-2c963f66af12 - - - 500 - text/plain;+charset=utf-8 149.0834ms
+2022-12-09 23:10:09.662 +03:00 [INF] Application is shutting down...
+2022-12-09 23:14:43.497 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-09 23:14:43.651 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-09 23:14:43.655 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-09 23:14:43.656 +03:00 [INF] Hosting environment: Development
+2022-12-09 23:14:43.656 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-09 23:14:44.178 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-09 23:14:44.314 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 139.5034ms
+2022-12-09 23:14:44.455 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-09 23:14:44.567 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 111.9969ms
+2022-12-09 23:14:55.316 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 94
+2022-12-09 23:14:55.332 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:14:55.354 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:14:56.270 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-09 23:14:56.403 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO payment (id, payment_uid, price, status)
+VALUES (@p0, @p1, @p2, @p3);
+2022-12-09 23:14:56.420 +03:00 [INF] Executing CreatedResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-09 23:14:56.444 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 1085.9592ms
+2022-12-09 23:14:56.445 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:14:56.449 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment application/json-patch+json 94 - 201 81 application/json;+charset=utf-8 1132.0816ms
+2022-12-09 23:15:05.613 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/api/v1/payment/3fa85f64-5717-4562-b3fc-2c963f66afa6 - -
+2022-12-09 23:15:05.613 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-09 23:15:05.618 +03:00 [INF] Route matched with {action = "GetPaymentByUid", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaymentByUid(System.Guid) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:15:05.673 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__paymentUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+WHERE p.payment_uid = @__paymentUid_0
+LIMIT 1
+2022-12-09 23:15:05.680 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-09 23:15:05.680 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments) in 62.331ms
+2022-12-09 23:15:05.680 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-09 23:15:05.680 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payment/3fa85f64-5717-4562-b3fc-2c963f66afa6 - - - 200 81 application/json;+charset=utf-8 67.4392ms
+2022-12-09 23:15:16.283 +03:00 [INF] Application is shutting down...
+2022-12-09 23:25:31.401 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-09 23:25:31.531 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-09 23:25:31.535 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-09 23:25:31.536 +03:00 [INF] Hosting environment: Development
+2022-12-09 23:25:31.536 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-09 23:25:32.106 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-09 23:25:32.230 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 127.6451ms
+2022-12-09 23:25:32.363 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-09 23:25:32.478 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 114.5611ms
+2022-12-09 23:26:51.398 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment/ application/json;+charset=utf-8 -
+2022-12-09 23:26:51.413 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:26:51.436 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-09 23:26:52.395 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-09 23:26:52.530 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO payment (id, payment_uid, price, status)
+VALUES (@p0, @p1, @p2, @p3);
+2022-12-09 23:26:52.547 +03:00 [INF] Executing CreatedResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-09 23:26:52.573 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 1132.0244ms
+2022-12-09 23:26:52.574 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-09 23:26:52.577 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment/ application/json;+charset=utf-8 - - 201 84 application/json;+charset=utf-8 1179.3949ms
+2022-12-09 23:27:39.462 +03:00 [INF] Application is shutting down...
+2022-12-12 17:16:10.889 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-12 17:16:11.212 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-12 17:16:11.218 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-12 17:16:11.219 +03:00 [INF] Hosting environment: Development
+2022-12-12 17:16:11.220 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-12 17:16:13.077 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-12 17:16:13.266 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 191.9644ms
+2022-12-12 17:16:13.399 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-12 17:16:13.432 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/favicon-32x32.png - -
+2022-12-12 17:16:13.458 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-12-12 17:16:13.459 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/favicon-32x32.png - - - 200 628 image/png 26.6158ms
+2022-12-12 17:16:13.645 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 246.2979ms
+2022-12-12 17:22:03.756 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment/ application/json;+charset=utf-8 -
+2022-12-12 17:22:03.784 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-12 17:22:03.827 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-12 17:22:05.500 +03:00 [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-12 17:22:05.715 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO payment (id, payment_uid, price, status)
+VALUES (@p0, @p1, @p2, @p3);
+2022-12-12 17:22:05.736 +03:00 [INF] Executing CreatedResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-12 17:22:05.776 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 1942.3965ms
+2022-12-12 17:22:05.777 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-12 17:22:05.785 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment/ application/json;+charset=utf-8 - - 201 84 application/json;+charset=utf-8 2028.9112ms
+2022-12-12 17:22:07.929 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/api/v1/payment/088993b1-c382-4cdc-bbab-d052de448c85 - -
+2022-12-12 17:22:07.929 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-12 17:22:07.934 +03:00 [INF] Route matched with {action = "GetPaymentByUid", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaymentByUid(System.Guid) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-12 17:22:08.055 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__paymentUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+WHERE p.payment_uid = @__paymentUid_0
+LIMIT 1
+2022-12-12 17:22:08.067 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-12 17:22:08.067 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments) in 132.8413ms
+2022-12-12 17:22:08.067 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-12 17:22:08.068 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payment/088993b1-c382-4cdc-bbab-d052de448c85 - - - 200 84 application/json;+charset=utf-8 138.6897ms
+2022-12-12 17:29:27.872 +03:00 [INF] Application is shutting down...
+2022-12-15 17:08:15.580 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-15 17:08:15.768 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-15 17:08:15.773 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-15 17:08:15.774 +03:00 [INF] Hosting environment: Development
+2022-12-15 17:08:15.774 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-15 17:08:16.634 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-15 17:08:16.800 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 169.4194ms
+2022-12-15 17:08:17.007 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-15 17:08:17.129 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.7560ms
+2022-12-15 17:10:10.425 +03:00 [INF] Application is shutting down...
+2022-12-15 20:51:58.699 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-15 20:51:59.034 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-15 20:51:59.040 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-15 20:51:59.041 +03:00 [INF] Hosting environment: Development
+2022-12-15 20:51:59.042 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-15 20:51:59.399 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-15 20:51:59.626 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 234.0970ms
+2022-12-15 20:51:59.977 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-15 20:52:00.154 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 176.8248ms
+2022-12-15 20:53:38.559 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8050/api/v1/payment/ application/json;+charset=utf-8 -
+2022-12-15 20:53:38.591 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-15 20:53:38.635 +03:00 [INF] Route matched with {action = "CreatePayment", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePayment(ModelsDTO.Payments.PaymentInfo) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-15 20:53:40.580 +03:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT count(*)::int
+FROM payment AS p
+2022-12-15 20:53:40.838 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO payment (id, payment_uid, price, status)
+VALUES (@p0, @p1, @p2, @p3);
+2022-12-15 20:53:40.866 +03:00 [INF] Executing CreatedResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-15 20:53:40.913 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CreatePayment (Payments) in 2269.4916ms
+2022-12-15 20:53:40.915 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CreatePayment (Payments)'
+2022-12-15 20:53:40.924 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8050/api/v1/payment/ application/json;+charset=utf-8 - - 201 83 application/json;+charset=utf-8 2364.7061ms
+2022-12-15 20:53:43.073 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/api/v1/payment/d455948c-cf4f-4515-99ba-088339e28f1d - -
+2022-12-15 20:53:43.074 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-15 20:53:43.081 +03:00 [INF] Route matched with {action = "GetPaymentByUid", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaymentByUid(System.Guid) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-15 20:53:43.177 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__paymentUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+WHERE p.payment_uid = @__paymentUid_0
+LIMIT 1
+2022-12-15 20:53:43.188 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-15 20:53:43.189 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments) in 107.03ms
+2022-12-15 20:53:43.189 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.GetPaymentByUid (Payments)'
+2022-12-15 20:53:43.190 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/api/v1/payment/d455948c-cf4f-4515-99ba-088339e28f1d - - - 200 83 application/json;+charset=utf-8 117.0740ms
+2022-12-15 21:00:46.616 +03:00 [INF] Application is shutting down...
+2022-12-15 21:00:55.263 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-15 21:00:55.498 +03:00 [INF] Now listening on: http://localhost:8050
+2022-12-15 21:00:55.505 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-15 21:00:55.506 +03:00 [INF] Hosting environment: Development
+2022-12-15 21:00:55.507 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\Car Rental System\Payments
+2022-12-15 21:00:55.858 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-15 21:00:56.083 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 232.9777ms
+2022-12-15 21:00:56.352 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-15 21:00:56.589 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 236.6011ms
+2022-12-15 21:01:43.284 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8050/api/v1/payment/d455948c-cf4f-4515-99ba-088339e28f1d - 0
+2022-12-15 21:01:43.312 +03:00 [INF] Executing endpoint 'Payments.Controllers.PaymentsAPIController.CancelRental (Payments)'
+2022-12-15 21:01:43.361 +03:00 [INF] Route matched with {action = "CancelRental", controller = "PaymentsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CancelRental(System.Guid) on controller Payments.Controllers.PaymentsAPIController (Payments).
+2022-12-15 21:01:44.995 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__paymentUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT p.id, p.payment_uid, p.price, p.status
+FROM payment AS p
+WHERE p.payment_uid = @__paymentUid_0
+LIMIT 1
+2022-12-15 21:01:45.181 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE payment SET payment_uid = @p0, price = @p1, status = @p2
+WHERE id = @p3;
+2022-12-15 21:01:45.202 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Payments.PaymentInfo'.
+2022-12-15 21:01:45.245 +03:00 [INF] Executed action Payments.Controllers.PaymentsAPIController.CancelRental (Payments) in 1877.8312ms
+2022-12-15 21:01:45.246 +03:00 [INF] Executed endpoint 'Payments.Controllers.PaymentsAPIController.CancelRental (Payments)'
+2022-12-15 21:01:45.252 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8050/api/v1/payment/d455948c-cf4f-4515-99ba-088339e28f1d - 0 - 200 87 application/json;+charset=utf-8 1968.2775ms
+2022-12-15 21:03:05.378 +03:00 [INF] Application is shutting down...

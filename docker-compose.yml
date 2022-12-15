@@ -14,7 +14,53 @@ services:
     ports:
       - "5432:5432"
 
+
 # TODO добавить сервисы
+  api-gateway:
+    build:
+      context: .
+      dockerfile: ./Car Rental System/APIGateway/Dockerfile
+    container_name: api-gateway
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    depends_on:
+      - car-service
+      - rental-service
+      - payment-service
+
+  car-service:
+    build:
+      context: .
+      dockerfile: ./Car Rental System/Cars/Dockerfile
+    container_name: car-service
+    restart: on-failure
+    ports:
+      - "8070:8070"
+    depends_on:
+      - postgres
+
+  rental-service:
+    build:
+      context: .
+      dockerfile: ./Car Rental System/Rentals/Dockerfile
+    container_name: rental-service
+    restart: on-failure
+    ports:
+      - "8060:8060"
+    depends_on:
+      - postgres
+
+  payment-service:
+    build:
+      context: .
+      dockerfile: ./Car Rental System/Payments/Dockerfile
+    container_name: payment-service
+    restart: on-failure
+    ports:
+      - "8050:8050"
+    depends_on:
+      - postgres
 
 volumes:
   db-data:

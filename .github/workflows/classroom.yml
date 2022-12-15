@@ -21,22 +21,27 @@ jobs:
 
       - name: Build images
         timeout-minutes: 10
-        run: docker compose build
+        run: |
+          ./scripts/publish.sh
+          docker compose build
 
       - name: Run containers
         timeout-minutes: 5
         run: |
-          docker compose up -d
+          ./scripts/start.sh
           ./scripts/wait-script.sh
         env:
-          WAIT_PORTS: 8080,8070,8060,8050
+          WAIT_PORTS: 8080,8070,8060,8050,5432
+
+      - name: Fill database
+        run: ./scripts/fill-db.sh
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
         with:
           # TODO insert your variant
-          collection: <variant>/postman/collection.json
-          environment: <variant>/postman/environment.json
+          collection: v3/postman/collection.json
+          environment: v3/postman/environment.json
           delayRequest: 100
           reporters: '[ "cli" ]'
 

@@ -30,6 +30,7 @@ jobs:
         timeout-minutes: 5
         run: |
           sudo chmod +x ./scripts/start.sh
+          sudo chmod +x ./scripts/wait-for.sh
           ./scripts/start.sh
           sudo chmod +x ./scripts/wait-script.sh
           ./scripts/wait-script.sh

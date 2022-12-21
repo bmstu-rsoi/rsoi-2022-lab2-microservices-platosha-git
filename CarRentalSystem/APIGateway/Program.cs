@@ -13,7 +13,7 @@ namespace APIGateway
                 {
                     webBuilder
                         .UseStartup<Startup>()
-                        .UseUrls("http://localhost:" + Environment.GetEnvironmentVariable("PORT"));
+                        .UseUrls("http://*:" + Environment.GetEnvironmentVariable("PORT"));
                 });
     }
 }

@@ -1,0 +1,22 @@
+2022-12-21 19:38:10.664 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-21 19:38:10.911 +03:00 [INF] Now listening on: http://localhost:8060
+2022-12-21 19:38:10.916 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-21 19:38:10.917 +03:00 [INF] Hosting environment: Development
+2022-12-21 19:38:10.917 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Rentals
+2022-12-21 19:38:11.230 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/index.html - -
+2022-12-21 19:38:11.401 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/index.html - - - 200 - text/html;charset=utf-8 176.6600ms
+2022-12-21 19:38:11.426 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-bundle.js - -
+2022-12-21 19:38:11.426 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-standalone-preset.js - -
+2022-12-21 19:38:11.427 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui.css - -
+2022-12-21 19:38:11.441 +03:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2022-12-21 19:38:11.442 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 15.3803ms
+2022-12-21 19:38:11.441 +03:00 [INF] The file /swagger-ui-bundle.js was not modified
+2022-12-21 19:38:11.444 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui-bundle.js - - - 304 - application/javascript 18.2098ms
+2022-12-21 19:38:11.441 +03:00 [INF] The file /swagger-ui.css was not modified
+2022-12-21 19:38:11.445 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/swagger-ui.css - - - 304 - text/css 17.9740ms
+2022-12-21 19:38:11.654 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - -
+2022-12-21 19:38:11.682 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/favicon-32x32.png - -
+2022-12-21 19:38:11.690 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-12-21 19:38:11.690 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/favicon-32x32.png - - - 200 628 image/png 7.6507ms
+2022-12-21 19:38:11.796 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 142.1391ms
+2022-12-21 19:38:48.025 +03:00 [INF] Application is shutting down...

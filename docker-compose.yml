@@ -32,7 +32,7 @@ services:
   car-service:
     build:
       context: .
-      dockerfile: ./Car Rental System/Cars/Dockerfile
+      dockerfile: ./CarRentalSystem/Cars/Dockerfile
     container_name: car-service
     restart: on-failure
     ports:
@@ -43,7 +43,7 @@ services:
   rental-service:
     build:
       context: .
-      dockerfile: ./Car Rental System/Rentals/Dockerfile
+      dockerfile: ./CarRentalSystem/Rentals/Dockerfile
     container_name: rental-service
     restart: on-failure
     ports:
@@ -54,7 +54,7 @@ services:
   payment-service:
     build:
       context: .
-      dockerfile: ./Car Rental System/Payments/Dockerfile
+      dockerfile: ./CarRentalSystem/Payments/Dockerfile
     container_name: payment-service
     restart: on-failure
     ports:

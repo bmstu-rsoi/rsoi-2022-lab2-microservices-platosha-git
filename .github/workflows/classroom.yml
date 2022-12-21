@@ -23,6 +23,7 @@ jobs:
         timeout-minutes: 10
         run: |
           sudo chmod +x ./scripts/publish.sh
+          ./scripts/publish.sh
           docker compose build
 
       - name: Run containers

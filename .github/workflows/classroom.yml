@@ -30,10 +30,9 @@ jobs:
         timeout-minutes: 5
         run: |
           sudo chmod +x ./scripts/start.sh
-          ./scripts/start.sh
           sudo chmod +x ./scripts/wait-script.sh
+          ./scripts/start.sh
           ./scripts/wait-script.sh
-
         env:
           WAIT_PORTS: 8080,8070,8060,8050,5432
 

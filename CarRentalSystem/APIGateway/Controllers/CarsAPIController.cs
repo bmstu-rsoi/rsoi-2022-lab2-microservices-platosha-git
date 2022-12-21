@@ -8,9 +8,9 @@ namespace APIGateway.Controllers
     [Route("/api/v1/cars")]
     public class CarsAPIController : ControllerBase
     {
-        private readonly CarsRepository _carsRepository;
+        private readonly ICarsRepository _carsRepository;
 
-        public CarsAPIController(CarsRepository carsRepository)
+        public CarsAPIController(ICarsRepository carsRepository)
         {
             _carsRepository = carsRepository;
         }

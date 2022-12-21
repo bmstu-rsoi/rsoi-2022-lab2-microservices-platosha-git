@@ -1,16 +1,21 @@
-﻿using ModelsDTO.Payments;
+﻿using Microsoft.Extensions.Options;
+using ModelsDTO.Payments;
 
 namespace APIGateway;
 
+public class PaymentsSettings
+{
+    public Uri Host { get; set; }
+}
 public class PaymentsRepository : IPaymentsRepository
 {
     private readonly HttpClient _httpClient;
     private readonly ILogger<PaymentsRepository> _logger;
 
-    public PaymentsRepository(HttpClient httpClient, ILogger<PaymentsRepository> logger)
+    public PaymentsRepository(IOptions<PaymentsSettings> settings, HttpClient httpClient, ILogger<PaymentsRepository> logger)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri("http://localhost:8050");
+        _httpClient.BaseAddress = settings.Value.Host;
         _logger = logger;
     }
 

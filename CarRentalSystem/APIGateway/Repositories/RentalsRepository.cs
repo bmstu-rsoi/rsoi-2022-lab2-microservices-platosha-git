@@ -1,19 +1,25 @@
 ﻿using System.Net.Http;
 using System.Web;
 using APIGateway.ModelsDTO;
+using Microsoft.Extensions.Options;
 using ModelsDTO.Rentals;
 
 namespace APIGateway;
+
+public class RentalsSettings
+{
+    public Uri Host { get; set; }
+}
 
 public class RentalsRepository : IRentalsRepository
 {
     private readonly HttpClient _httpClient;
     private readonly ILogger<RentalsRepository> _logger;
 
-    public RentalsRepository(HttpClient httpClient, ILogger<RentalsRepository> logger)
+    public RentalsRepository(IOptions<RentalsSettings> settings, HttpClient httpClient, ILogger<RentalsRepository> logger)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri("http://localhost:8060");
+        _httpClient.BaseAddress = settings.Value.Host;
         _logger = logger;
     }
     

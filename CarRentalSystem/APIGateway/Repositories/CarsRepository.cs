@@ -1,16 +1,22 @@
-﻿using ModelsDTO.Cars;
+﻿using Microsoft.Extensions.Options;
+using ModelsDTO.Cars;
 
 namespace APIGateway;
+
+public class CarsSettings
+{
+    public Uri Host { get; set; }
+}
 
 public class CarsRepository : ICarsRepository
 {
     private readonly HttpClient _httpClient;
     private readonly ILogger<CarsRepository> _logger;
 
-    public CarsRepository(HttpClient httpClient, ILogger<CarsRepository> logger)
+    public CarsRepository(IOptions<CarsSettings> settings, HttpClient httpClient, ILogger<CarsRepository> logger)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri("http://localhost:8070");
+        _httpClient.BaseAddress = settings.Value.Host;
         _logger = logger;
     }
 

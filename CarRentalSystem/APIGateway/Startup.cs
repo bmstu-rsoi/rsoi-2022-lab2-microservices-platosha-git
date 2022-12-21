@@ -27,13 +27,13 @@ namespace APIGateway
                 
             });
             services.AddSwaggerGenNewtonsoftSupport();
-            
-            services.AddScoped<CarsRepository>();
-            services.AddScoped<RentalsRepository>();
-            services.AddScoped<PaymentsRepository>();
 
             services.AddScoped<IRentalsService, RentalsService>();
 
+            services.Configure<CarsSettings>(Configuration.GetSection("CarsService"));
+            services.Configure<PaymentsSettings>(Configuration.GetSection("PaymentsService"));
+            services.Configure<RentalsSettings>(Configuration.GetSection("RentalsService"));
+            
             AddHttpClients(services);
             AddLogging(services, Configuration);
         }

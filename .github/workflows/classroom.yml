@@ -29,13 +29,18 @@ jobs:
       - name: Run containers
         timeout-minutes: 5
         run: |
+          sudo chmod +x ./scripts/start.sh
           ./scripts/start.sh
+          sudo chmod +x ./scripts/wait-script.sh
           ./scripts/wait-script.sh
+
         env:
           WAIT_PORTS: 8080,8070,8060,8050,5432
 
       - name: Fill database
-        run: ./scripts/fill-db.sh
+        run: |
+          sudo chmod +x ./scripts/fill-db.sh
+          ./scripts/fill-db.sh
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master

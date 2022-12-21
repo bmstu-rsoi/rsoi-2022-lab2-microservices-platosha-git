@@ -19,7 +19,7 @@ services:
   api-gateway:
     build:
       context: .
-      dockerfile: ./Car Rental System/APIGateway/Dockerfile
+      dockerfile: ./CarRentalSystem/APIGateway/Dockerfile
     container_name: api-gateway
     restart: on-failure
     ports:

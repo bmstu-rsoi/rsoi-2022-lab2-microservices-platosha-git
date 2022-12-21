@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+sudo chmod +x ./scripts/wait-for.sh
 
 IFS="," read -ra PORTS <<<"$WAIT_PORTS"
 

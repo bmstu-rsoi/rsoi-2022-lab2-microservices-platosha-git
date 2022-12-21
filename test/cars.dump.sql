@@ -84,7 +84,7 @@ ALTER TABLE ONLY public.cars ALTER COLUMN id SET DEFAULT nextval('public.cars_id
 --
 
 -- INSERT INTO public.cars (id, car_uid, brand, model, registration_number, power, price, type, availability) VALUES (1, '109b42f3-198d-4c89-9276-a7520a7120ab', 'Mercedes Benz', 'GLA 250', 'ЛО777Х799', 249, 'SEDAN', 3500, true);
-COPY public.cars (id, car_uid, brand, model, registration_number, power, price, type, availability) FROM stdin;
+COPY public.cars (id, car_uid, brand, model, registration_number, power, type, price, availability) FROM stdin;
 1	'109b42f3-198d-4c89-9276-a7520a7120ab' 'Mercedes Benz' 'GLA 250' 'ЛО777Х799' 249 'SEDAN' 3500 true
 \.
 

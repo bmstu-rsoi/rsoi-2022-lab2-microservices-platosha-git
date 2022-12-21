@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using AspNetCore.Http.Extensions;
+using Microsoft.Extensions.Options;
 using ModelsDTO.Cars;
 
 namespace APIGateway;
@@ -20,12 +21,12 @@ public class CarsRepository : ICarsRepository
         _logger = logger;
     }
 
-    public async Task<PaginationCarResponse?> GetAllAsync(int page, int size, bool showAll)
+    public async Task<PaginationCarResponse> GetAllAsync(int page, int size, bool showAll)
     {
         var response = await _httpClient.GetAsync($"/api/v1/cars/?page={page}&size={size}&showAll={showAll}");
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<PaginationCarResponse>();
+        return await response.Content.ReadAsJsonAsync<PaginationCarResponse>() ?? throw new InvalidOperationException();
     }
     
     public async Task<CarResponse> GetAsyncByUid(Guid carUid)

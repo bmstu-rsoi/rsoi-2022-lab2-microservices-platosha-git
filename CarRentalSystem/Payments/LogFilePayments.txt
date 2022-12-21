@@ -11,3 +11,33 @@
 2022-12-21 19:37:56.519 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/favicon-32x32.png - - - 200 628 image/png 16.8525ms
 2022-12-21 19:37:56.625 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 151.0525ms
 2022-12-21 19:38:48.022 +03:00 [INF] Application is shutting down...
+2022-12-22 01:17:06.006 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 01:17:06.271 +03:00 [INF] Now listening on: http://[::]:8050
+2022-12-22 01:17:06.278 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 01:17:06.279 +03:00 [INF] Hosting environment: Development
+2022-12-22 01:17:06.280 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\CarRentalSystem\Payments
+2022-12-22 01:17:06.736 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-22 01:17:06.912 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 181.5055ms
+2022-12-22 01:17:07.240 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-22 01:17:07.409 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 169.5781ms
+2022-12-22 01:18:22.478 +03:00 [INF] Application is shutting down...
+2022-12-22 01:22:57.068 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 01:22:57.309 +03:00 [INF] Now listening on: http://[::]:8050
+2022-12-22 01:22:57.314 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 01:22:57.315 +03:00 [INF] Hosting environment: Development
+2022-12-22 01:22:57.315 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\CarRentalSystem\Payments
+2022-12-22 01:22:58.169 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-22 01:22:58.385 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 222.7302ms
+2022-12-22 01:22:58.610 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-22 01:22:58.816 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 205.6173ms
+2022-12-22 01:23:24.640 +03:00 [INF] Application is shutting down...
+2022-12-22 01:23:27.986 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 01:23:28.171 +03:00 [INF] Now listening on: http://[::]:8050
+2022-12-22 01:23:28.176 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 01:23:28.177 +03:00 [INF] Hosting environment: Development
+2022-12-22 01:23:28.177 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\RSOI\lab2\CarRentalSystem\Payments
+2022-12-22 01:23:28.680 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/index.html - -
+2022-12-22 01:23:28.840 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/index.html - - - 200 - text/html;charset=utf-8 163.9400ms
+2022-12-22 01:23:28.994 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - -
+2022-12-22 01:23:29.140 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8050/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 146.3763ms
+2022-12-22 01:30:20.491 +03:00 [INF] Application is shutting down...

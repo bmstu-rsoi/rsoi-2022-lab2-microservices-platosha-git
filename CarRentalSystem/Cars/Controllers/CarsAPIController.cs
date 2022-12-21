@@ -51,7 +51,7 @@ namespace Cars.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaginationCarResponse))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetAllCars([Range(1, int.MaxValue)] int page, [Range(1, 100)] int size, bool showAll)
+        public async Task<IActionResult> GetAllCars([Range(0, int.MaxValue)] int page, [Range(1, 100)] int size, bool showAll)
         {
             var cars = (showAll) ? await _carsController.GetAllCars(page, size) : 
                     await _carsController.GetAvailableCars(page, size);
@@ -61,7 +61,7 @@ namespace Cars.Controllers
                 PageSize = size,
                 Page = page,
                 TotalElements = cars.Count,
-                Cars = ListCarResponse(cars)
+                Items = ListCarResponse(cars).ToArray()
             };
             
             return Ok(response);

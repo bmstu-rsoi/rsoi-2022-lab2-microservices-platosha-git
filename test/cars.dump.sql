@@ -83,7 +83,10 @@ ALTER TABLE ONLY public.cars ALTER COLUMN id SET DEFAULT nextval('public.cars_id
 -- Data for Name: cars; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.cars (id, car_uid, brand, model, registration_number, power, price, type, availability) VALUES (1, '109b42f3-198d-4c89-9276-a7520a7120ab', 'Mercedes Benz', 'GLA 250', 'ЛО777Х799', 249, 'SEDAN', 3500, true);
+-- INSERT INTO public.cars (id, car_uid, brand, model, registration_number, power, price, type, availability) VALUES (1, '109b42f3-198d-4c89-9276-a7520a7120ab', 'Mercedes Benz', 'GLA 250', 'ЛО777Х799', 249, 'SEDAN', 3500, true);
+COPY public.cars (id, car_uid, brand, model, registration_number, power, price, type, availability) FROM stdin;
+1	'109b42f3-198d-4c89-9276-a7520a7120ab' 'Mercedes Benz' 'GLA 250' 'ЛО777Х799' 249 'SEDAN' 3500 true
+\.
 
 --
 -- TOC entry 3324 (class 0 OID 0)

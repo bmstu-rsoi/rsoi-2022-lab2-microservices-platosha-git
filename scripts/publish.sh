@@ -1,4 +1,4 @@
-dotnet restore CarRentalSystem/Car Rental System.sln
+dotnet restore CarRentalSystem/CarRentalSystem.sln
 
 dotnet publish CarRentalSystem/APIGateway/APIGateway.csproj -c Release -o publish/APIGateway --no-restore
 dotnet publish CarRentalSystem/Cars/Cars.csproj -c Release -o publish/Cars --no-restore

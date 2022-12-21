@@ -23,7 +23,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine
 
 WORKDIR /app
 
-COPY publish/Cars/ .
+COPY publish/CarsService/ .
 
 EXPOSE 8070
 ENTRYPOINT ["dotnet", "Cars.dll"]

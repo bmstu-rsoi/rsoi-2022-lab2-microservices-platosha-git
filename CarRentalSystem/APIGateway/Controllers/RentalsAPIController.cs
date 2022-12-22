@@ -50,8 +50,8 @@ namespace APIGateway.Controllers
         /// <param name="X-User-Name">Имя пользователя</param>
         /// <response code="200">Информация по конкретному бронированию</response>
         /// <response code="404">Билет не найден</response>
-        /*[HttpGet("{rentalUid:guid}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
+        [HttpGet("{rentalUid}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetRentalByUid([Required, FromHeader(Name = "X-User-Name")] string username,
@@ -59,7 +59,7 @@ namespace APIGateway.Controllers
         {
             try
             {
-                var response = await _rentalsService.FindByUsernameAndUid(username, rentalUid);
+                var response = await _rentalsService.GetAsyncByUid(username, rentalUid);
                 return Ok(response);
             }
             catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
@@ -72,8 +72,7 @@ namespace APIGateway.Controllers
                 throw;
             }
         }
-        */
-        
+
         /// <summary>Забронировать автомобиль</summary>
         /// <param name="X-User-Name">Имя пользователя</param>
         /// <response code="200">Информация о бронировании авто</response>
@@ -109,10 +108,10 @@ namespace APIGateway.Controllers
         /// <summary> Завершение аренды автомобиля </summary>
         /// <param name="rentalUid"> UUID аренды </param>
         /// <param name="X-User-Name"> Имя пользователя </param>
-        /// <response code="200"> Аренда успешно завершена </response>
+        /// <response code="204"> Аренда успешно завершена </response>
         /// <response code="404"> Аренда не найдена </response>
         [HttpPost("{rentalUid}/finish")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> FinishBookCar([Required, FromHeader(Name = "X-User-Name")] string username,
@@ -121,7 +120,7 @@ namespace APIGateway.Controllers
             try
             {
                 await _rentalsService.FinishRent(username, rentalUid);
-                return Ok();
+                return NoContent();
             }
             catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
             {

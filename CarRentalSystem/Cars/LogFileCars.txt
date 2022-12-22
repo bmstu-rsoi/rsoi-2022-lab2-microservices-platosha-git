@@ -2085,3 +2085,741 @@ LIMIT 1
 2022-12-22 03:50:46.335 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
 2022-12-22 03:50:46.335 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 1.5591ms
 2022-12-22 03:50:59.625 +03:00 [INF] Application is shutting down...
+2022-12-22 15:16:02.826 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 15:16:03.013 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 15:16:03.016 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:16:03.017 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:16:03.017 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 15:16:03.462 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 15:16:03.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 146.2276ms
+2022-12-22 15:16:03.739 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-22 15:16:03.872 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 133.7351ms
+2022-12-22 15:17:11.579 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:17:11.595 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:17:11.617 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:17:12.637 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:17:12.656 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:17:12.681 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1060.0841ms
+2022-12-22 15:17:12.681 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:17:12.685 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 53 application/json;+charset=utf-8 1105.4795ms
+2022-12-22 15:17:19.507 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:17:19.507 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:17:19.507 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:17:19.517 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:17:19.563 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:17:19.566 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 59.1606ms
+2022-12-22 15:17:19.567 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:17:19.567 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 60.1937ms
+2022-12-22 15:17:23.975 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:17:23.976 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:17:23.978 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:17:24.025 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:17:24.093 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:17:24.100 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:17:24.101 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 122.6254ms
+2022-12-22 15:17:24.101 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:17:24.101 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 125.6111ms
+2022-12-22 15:17:42.459 +03:00 [INF] Application is shutting down...
+2022-12-22 15:20:18.339 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 15:20:18.470 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 15:20:18.473 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:20:18.474 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:20:18.474 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 15:20:19.018 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 15:20:19.157 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 142.5070ms
+2022-12-22 15:20:19.284 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-22 15:20:19.430 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 146.5740ms
+2022-12-22 15:20:33.143 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:20:33.166 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:20:33.202 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:20:34.378 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:20:34.439 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:20:34.467 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1260.8434ms
+2022-12-22 15:20:34.468 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:20:34.473 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 1330.0469ms
+2022-12-22 15:20:37.417 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:20:37.417 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:20:37.420 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:20:37.437 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:20:37.505 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:20:37.512 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:20:37.513 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 92.5264ms
+2022-12-22 15:20:37.513 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:20:37.513 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 96.3812ms
+2022-12-22 15:21:30.291 +03:00 [INF] Application is shutting down...
+2022-12-22 15:22:51.033 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 15:22:51.180 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 15:22:51.184 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:22:51.184 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:22:51.184 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 15:22:51.631 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 15:22:51.781 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 154.0034ms
+2022-12-22 15:22:51.905 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-22 15:22:52.022 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 116.2654ms
+2022-12-22 15:23:04.577 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:23:04.593 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:23:04.616 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:23:05.598 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:23:05.618 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:23:05.643 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1023.0789ms
+2022-12-22 15:23:05.643 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:23:05.647 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 53 application/json;+charset=utf-8 1069.3557ms
+2022-12-22 15:23:11.181 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:23:11.182 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:23:11.182 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:23:11.191 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:23:11.268 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:23:11.274 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 92.1162ms
+2022-12-22 15:23:11.274 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:23:11.274 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 93.0626ms
+2022-12-22 15:23:14.354 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:23:14.355 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:23:14.357 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:23:14.406 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:23:14.484 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:23:14.491 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:23:14.491 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 133.563ms
+2022-12-22 15:23:14.491 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:23:14.491 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 136.8830ms
+2022-12-22 15:23:24.539 +03:00 [INF] Application is shutting down...
+2022-12-22 15:26:27.178 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 15:26:27.310 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 15:26:27.314 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:26:27.315 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:26:27.315 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 15:26:27.890 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 15:26:28.013 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 126.7920ms
+2022-12-22 15:26:28.158 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-22 15:26:28.291 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 133.7672ms
+2022-12-22 15:26:52.223 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:26:52.239 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:26:52.267 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:26:53.268 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:26:53.331 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:26:53.360 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1089.1271ms
+2022-12-22 15:26:53.360 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:26:53.364 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 1140.9294ms
+2022-12-22 15:26:56.284 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:26:56.285 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:26:56.287 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:26:56.305 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:26:56.388 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:26:56.396 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:26:56.397 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 109.3179ms
+2022-12-22 15:26:56.397 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:26:56.397 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 113.0726ms
+2022-12-22 15:27:00.790 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:27:00.790 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:27:00.793 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:27:00.837 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:27:00.837 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:27:00.838 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 44.2123ms
+2022-12-22 15:27:00.838 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:27:00.838 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 48.2407ms
+2022-12-22 15:27:22.019 +03:00 [INF] Application is shutting down...
+2022-12-22 15:29:49.013 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 15:29:49.184 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 15:29:49.188 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:29:49.189 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:29:49.189 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 15:29:49.789 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 15:29:49.947 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 161.6294ms
+2022-12-22 15:29:50.080 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-22 15:29:50.215 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.7467ms
+2022-12-22 15:30:01.379 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:30:01.396 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:30:01.424 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:30:02.528 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:30:02.590 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:30:02.618 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1189.1424ms
+2022-12-22 15:30:02.618 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:30:02.622 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 1243.2772ms
+2022-12-22 15:30:08.253 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:30:08.254 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:30:08.257 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:30:08.275 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:30:08.354 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:30:08.361 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:30:08.362 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 104.8244ms
+2022-12-22 15:30:08.362 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:30:08.362 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 109.1283ms
+2022-12-22 15:30:13.618 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:30:13.618 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:30:13.620 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:30:13.692 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:30:13.692 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:30:13.693 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 72.1911ms
+2022-12-22 15:30:13.693 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:30:13.693 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 74.9604ms
+2022-12-22 15:31:21.949 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:31:21.950 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:31:21.950 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:31:21.954 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:31:21.954 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:31:21.954 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 3.8826ms
+2022-12-22 15:31:21.955 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:31:21.955 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 5.4350ms
+2022-12-22 15:31:26.131 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:31:26.131 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:31:26.131 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:31:26.133 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:31:26.144 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:31:26.145 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:31:26.146 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 13.8948ms
+2022-12-22 15:31:26.146 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:31:26.146 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 15.4398ms
+2022-12-22 15:31:59.020 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:31:59.020 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:31:59.021 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:31:59.023 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:31:59.024 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:31:59.024 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 2.7244ms
+2022-12-22 15:31:59.024 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:31:59.024 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 4.4132ms
+2022-12-22 15:32:01.861 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:32:01.861 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:32:01.861 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:32:01.863 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:32:01.872 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:32:01.873 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:32:01.873 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 11.6551ms
+2022-12-22 15:32:01.873 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:32:01.873 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 12.5080ms
+2022-12-22 15:32:17.069 +03:00 [INF] Application is shutting down...
+2022-12-22 15:33:33.520 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 15:33:33.652 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 15:33:33.655 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:33:33.656 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:33:33.656 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 15:33:34.208 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 15:33:34.361 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 157.3577ms
+2022-12-22 15:33:34.480 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-22 15:33:34.597 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 117.6793ms
+2022-12-22 15:33:51.544 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:33:51.562 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:33:51.586 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:33:52.732 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:33:52.800 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:33:52.833 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1243.2856ms
+2022-12-22 15:33:52.833 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:33:52.837 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 1293.1031ms
+2022-12-22 15:33:55.976 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:33:55.977 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:33:55.980 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:33:55.999 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:33:56.077 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:33:56.084 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:33:56.085 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 104.4729ms
+2022-12-22 15:33:56.085 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:33:56.085 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 109.1823ms
+2022-12-22 15:34:01.372 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:01.373 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:01.374 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:01.416 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:01.417 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:01.417 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 42.2053ms
+2022-12-22 15:34:01.417 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:01.417 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 44.7058ms
+2022-12-22 15:34:08.725 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.725 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.726 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.728 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.728 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.728 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.725ms
+2022-12-22 15:34:08.728 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.729 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.6904ms
+2022-12-22 15:34:08.736 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.736 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.736 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.738 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.739 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.739 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.5132ms
+2022-12-22 15:34:08.739 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.739 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.3075ms
+2022-12-22 15:34:08.746 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.746 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.747 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.748 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.749 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.749 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.3023ms
+2022-12-22 15:34:08.749 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.749 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.1474ms
+2022-12-22 15:34:08.756 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.757 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.757 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.759 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.759 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.759 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.4607ms
+2022-12-22 15:34:08.759 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.760 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.2780ms
+2022-12-22 15:34:08.767 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.767 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.767 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.769 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.769 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.770 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.4185ms
+2022-12-22 15:34:08.770 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.770 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.0944ms
+2022-12-22 15:34:08.777 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.777 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.778 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.779 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.779 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.779 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 1.7462ms
+2022-12-22 15:34:08.780 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.780 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.3174ms
+2022-12-22 15:34:08.787 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.787 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.787 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.789 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.789 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.789 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 1.9977ms
+2022-12-22 15:34:08.789 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.790 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.9249ms
+2022-12-22 15:34:08.797 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:08.797 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.797 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:08.798 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:08.798 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:08.799 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 1.7408ms
+2022-12-22 15:34:08.799 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:08.799 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.1760ms
+2022-12-22 15:34:15.089 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0
+2022-12-22 15:34:15.089 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:34:15.089 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:15.091 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:15.093 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:34:15.093 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:15.094 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 4.1382ms
+2022-12-22 15:34:15.094 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:34:15.094 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0 - 200 184 application/json;+charset=utf-8 5.2025ms
+2022-12-22 15:34:29.745 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:34:29.745 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:29.745 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:29.747 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:29.747 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:29.748 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.2903ms
+2022-12-22 15:34:29.748 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:34:29.748 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 184 application/json;+charset=utf-8 2.8328ms
+2022-12-22 15:34:36.161 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:34:36.161 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:34:36.161 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:36.162 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:36.171 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:34:36.172 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:36.172 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 10.7654ms
+2022-12-22 15:34:36.172 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:34:36.172 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 11.3009ms
+2022-12-22 15:34:40.045 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0
+2022-12-22 15:34:40.045 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:34:40.045 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:34:40.047 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:34:40.056 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:34:40.057 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:34:40.057 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 11.8916ms
+2022-12-22 15:34:40.057 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:34:40.057 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0 - 200 184 application/json;+charset=utf-8 12.3847ms
+2022-12-22 15:35:04.034 +03:00 [INF] Application is shutting down...
+2022-12-22 15:36:20.252 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 15:36:20.403 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 15:36:20.407 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 15:36:20.408 +03:00 [INF] Hosting environment: Development
+2022-12-22 15:36:20.409 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 15:36:20.898 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 15:36:21.030 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 136.1179ms
+2022-12-22 15:36:21.149 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -
+2022-12-22 15:36:21.264 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 114.6460ms
+2022-12-22 15:36:37.346 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - -
+2022-12-22 15:36:37.362 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:36:37.384 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:38.439 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.availability
+ORDER BY c.price
+LIMIT @__p_1 OFFSET @__p_0
+2022-12-22 15:36:38.501 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 15:36:38.536 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetAllCars (Cars) in 1147.3654ms
+2022-12-22 15:36:38.536 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetAllCars (Cars)'
+2022-12-22 15:36:38.541 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False - - - 200 237 application/json;+charset=utf-8 1194.5386ms
+2022-12-22 15:36:41.684 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:36:41.684 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:41.686 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:41.703 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:41.776 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:36:41.783 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:41.784 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 97.8633ms
+2022-12-22 15:36:41.784 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:41.785 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 100.9813ms
+2022-12-22 15:36:46.233 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:46.233 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:46.240 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:46.306 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:46.306 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:46.307 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 66.1945ms
+2022-12-22 15:36:46.307 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:46.307 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 73.7965ms
+2022-12-22 15:36:49.188 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.188 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.189 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.191 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.191 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.191 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.4922ms
+2022-12-22 15:36:49.191 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.192 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.6914ms
+2022-12-22 15:36:49.198 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.198 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.198 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.200 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.200 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.200 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 1.9478ms
+2022-12-22 15:36:49.201 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.201 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.5863ms
+2022-12-22 15:36:49.207 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.207 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.208 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.210 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.210 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.211 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.8137ms
+2022-12-22 15:36:49.211 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.211 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.6416ms
+2022-12-22 15:36:49.218 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.218 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.218 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.219 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.220 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.220 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.0917ms
+2022-12-22 15:36:49.220 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.220 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.5656ms
+2022-12-22 15:36:49.227 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.228 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.228 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.229 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.230 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.230 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.0606ms
+2022-12-22 15:36:49.230 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.230 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.6954ms
+2022-12-22 15:36:49.236 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.236 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.237 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.238 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.239 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.239 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.0845ms
+2022-12-22 15:36:49.239 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.239 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.8019ms
+2022-12-22 15:36:49.246 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.246 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.246 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.248 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.248 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.249 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.2203ms
+2022-12-22 15:36:49.249 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.249 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.8293ms
+2022-12-22 15:36:49.255 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.255 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.255 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.257 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.257 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.257 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.3363ms
+2022-12-22 15:36:49.258 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.258 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 3.0014ms
+2022-12-22 15:36:49.265 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.266 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.266 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.267 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.268 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.268 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.1428ms
+2022-12-22 15:36:49.268 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.268 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.7383ms
+2022-12-22 15:36:49.275 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:49.275 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.275 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:49.277 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:49.277 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:49.277 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.1285ms
+2022-12-22 15:36:49.277 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:49.277 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 185 application/json;+charset=utf-8 2.8619ms
+2022-12-22 15:36:51.897 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0
+2022-12-22 15:36:51.898 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:51.898 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:51.899 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:51.903 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:36:51.903 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:51.904 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 5.7227ms
+2022-12-22 15:36:51.904 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:51.904 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0 - 200 184 application/json;+charset=utf-8 6.4273ms
+2022-12-22 15:36:54.407 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:36:54.407 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:54.407 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:54.409 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:54.409 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:54.409 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.2461ms
+2022-12-22 15:36:54.409 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:36:54.409 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 184 application/json;+charset=utf-8 2.7662ms
+2022-12-22 15:36:56.924 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0
+2022-12-22 15:36:56.924 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:56.925 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:56.927 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:56.929 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:36:56.929 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:56.929 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 4.4729ms
+2022-12-22 15:36:56.929 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:56.930 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False - 0 - 200 185 application/json;+charset=utf-8 5.3900ms
+2022-12-22 15:36:59.524 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0
+2022-12-22 15:36:59.525 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:59.525 +03:00 [INF] Route matched with {action = "ReserveCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ReserveCarByUid(System.Guid, Boolean) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:36:59.527 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:36:59.536 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@p8='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE cars SET availability = @p0, brand = @p1, car_uid = @p2, model = @p3, power = @p4, price = @p5, registration_number = @p6, type = @p7
+WHERE id = @p8;
+2022-12-22 15:36:59.536 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:36:59.537 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars) in 11.8225ms
+2022-12-22 15:36:59.537 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.ReserveCarByUid (Cars)'
+2022-12-22 15:36:59.537 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True - 0 - 200 184 application/json;+charset=utf-8 12.5726ms
+2022-12-22 15:37:02.481 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - -
+2022-12-22 15:37:02.481 +03:00 [INF] Executing endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:37:02.481 +03:00 [INF] Route matched with {action = "GetCarByUid", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCarByUid(System.Guid) on controller Cars.Controllers.CarsAPIController (Cars).
+2022-12-22 15:37:02.482 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__carUid_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT c.id, c.availability, c.brand, c.car_uid, c.model, c.power, c.price, c.registration_number, c.type
+FROM cars AS c
+WHERE c.car_uid = @__carUid_0
+LIMIT 1
+2022-12-22 15:37:02.483 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.CarResponse'.
+2022-12-22 15:37:02.483 +03:00 [INF] Executed action Cars.Controllers.CarsAPIController.GetCarByUid (Cars) in 2.1862ms
+2022-12-22 15:37:02.483 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
+2022-12-22 15:37:02.483 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 184 application/json;+charset=utf-8 2.9056ms
+2022-12-22 15:37:17.003 +03:00 [INF] Application is shutting down...

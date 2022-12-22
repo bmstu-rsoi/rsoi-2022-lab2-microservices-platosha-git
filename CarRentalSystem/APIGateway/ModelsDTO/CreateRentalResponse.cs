@@ -15,10 +15,10 @@ public class CreateRentalResponse
     public Guid CarUid { get; set; }
     
     [JsonProperty("dateFrom")]
-    public DateTimeOffset DateFrom { get; set; }
+    public string DateFrom { get; set; }
     
     [JsonProperty("dateTo")]
-    public DateTimeOffset DateTo { get; set; }
+    public string DateTo { get; set; }
     
     [JsonProperty("payment")]
     public PaymentInfo Payment { get; set; }

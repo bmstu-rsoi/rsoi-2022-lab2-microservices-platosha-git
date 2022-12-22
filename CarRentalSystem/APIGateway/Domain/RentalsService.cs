@@ -44,8 +44,8 @@ public class RentalsService : IRentalsService
             RentalUid = rentalUid,
             Status = "IN_PROGRESS",
             CarUid = carUid,
-            DateFrom = dateFrom,
-            DateTo = dateTo
+            DateFrom = dateFrom.ToString("yyyy-MM-dd"),
+            DateTo = dateTo.ToString("yyyy-MM-dd")
         };
         return response;
     }
@@ -56,8 +56,8 @@ public class RentalsService : IRentalsService
         {
             RentalUid = rental.RentalUid,
             Status = rental.Status,
-            DateFrom = rental.DateFrom.UtcDateTime,
-            DateTo = rental.DateTo.UtcDateTime
+            DateFrom = rental.DateFrom.AddDays(1).ToString("yyyy-MM-dd"),
+            DateTo = rental.DateTo.AddDays(1).ToString("yyyy-MM-dd")
         };
         return response;
     }
@@ -124,6 +124,16 @@ public class RentalsService : IRentalsService
             await AddPaymentInfoAsync(rental.PaymentUid, res);
             response.Add(res);
         }
+
+        return response;
+    }
+
+    public async Task<RentalResponse> GetAsyncByUid(string username, Guid rentalUid)
+    {
+        var rental = await _rentalsRepository.GetAsyncByUsernameAndRentalUid(username, rentalUid);
+        var response = GetRentalResponse(rental);
+        await AddCarInfoAsync(rental.CarUid, response);
+        await AddPaymentInfoAsync(rental.PaymentUid, response);
 
         return response;
     }

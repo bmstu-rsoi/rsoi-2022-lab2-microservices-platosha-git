@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
-using ModelsDTO.Cars;
 using Rentals.ModelsDB;
 using ModelsDTO.Rentals;
 
@@ -36,11 +35,9 @@ namespace Rentals.Controllers
             return rental;
         }
 
-        private RentalsDTO? InitRentalsDTO(Rental? rental)
+        private RentalsDTO InitRentalsDTO(Rental rental)
         {
-            if (rental == null) return null;
-            
-            RentalsDTO rentalDTO = new RentalsDTO()
+            var rentalDTO = new RentalsDTO()
             {
                 RentalUid = rental.RentalUid,
                 Username = rental.Username,
@@ -56,10 +53,10 @@ namespace Rentals.Controllers
 
         private List<RentalsDTO> ListRentalsDTO(List<Rental> lRentals)
         {
-            List<RentalsDTO> lRentalsDTO = new List<RentalsDTO>();
+            var lRentalsDTO = new List<RentalsDTO>();
             foreach (var rental in lRentals)
             {
-                RentalsDTO rentalDTO = InitRentalsDTO(rental);
+                var rentalDTO = InitRentalsDTO(rental);
                 lRentalsDTO.Add(rentalDTO);
             }
 
@@ -68,10 +65,9 @@ namespace Rentals.Controllers
 
         /// <summary>Получить информацию о всех арендах пользователя</summary>
         /// <param name="X-User-Name"> Имя пользователя </param>
-        /// <returns>Информация обо всех арендах</returns>
+        /// <response code="200">Информация обо всех арендах</response>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<RentalsDTO>))]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetRentalsByUsername([Required, FromQuery(Name = "X-User-Name")] string username)
         {
             try
@@ -86,19 +82,21 @@ namespace Rentals.Controllers
                 throw;
             }
         }
-
-        // Glen
-        // 8b33afd0-9850-41c8-8325-32b5ea91759c
-        [HttpGet("{rentalUid:guid}")]
+        
+        /// <summary>Информация по конкретной аренде пользователя</summary>
+        /// <param name="rentalUid">UUID аренды</param>
+        /// <param name="X-User-Name"> Имя пользователя </param>
+        /// <response code="200">Информация по конкретному бронированию</response>
+        /// <response code="404">Билет не найден</response>
+        [HttpGet("{rentalUid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetRentalByUid([Required, FromQuery(Name = "X-User-Name")] string username,
             Guid rentalUid)
         {
             try
             {
-                var rental = await _rentalsController.GetRentalByRentalUid(username, rentalUid);
+                var rental = await _rentalsController.GetRentalByUid(username, rentalUid);
                 var response = InitRentalsDTO(rental);
                 return Ok(response);
             }
@@ -108,11 +106,15 @@ namespace Rentals.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "+ Error occurred trying GetRentalByRentalUid!");
+                _logger.LogError(e, "+ Error occurred trying GetRentalByUid!");
                 throw;
             }
         }
 
+        /// <summary>Забронировать автомобиль</summary>
+        /// <param name="X-User-Name"> Имя пользователя </param>
+        /// <response code="201">Информация о бронировании авто</response>
+        /// <response code="400">Ошибка валидации данных</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RentalsDTO))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -125,17 +127,21 @@ namespace Rentals.Controllers
             return Created($"/api/v1/{addedRental.Id}", response);
         }
         
+        /// <summary>Завершение аренды автомобиля</summary>
+        /// <param name="rentalUid">UUID аренды</param>
+        /// <param name="X-User-Name">Имя пользователя </param>
+        /// <response code="204">Аренда успешно завершена</response>
+        /// <response code="404">Аренда не найдена</response>
         [HttpPatch("{username}/{rentalUid}/{status}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> FinishRent(string username, Guid rentalUid, string status)
+        public async Task<IActionResult> ChangeRentalStatus(string username, Guid rentalUid, string status)
         {
-            var rental = await _rentalsController.GetRentalByRentalUid(username, rentalUid);
+            var rental = await _rentalsController.GetRentalByUid(username, rentalUid);
             rental.Status = status;
-            await _rentalsController.FinishRent(rental);
-
-            var response = InitRentalsDTO(rental);
-            return Ok(response);
+            await _rentalsController.PatchRental(rental);
+            
+            return NoContent();
         }
     }
 }

@@ -162,7 +162,7 @@ public class RentalsService : IRentalsService
         var carUid = rental.CarUid;
 
         var car = await _carsRepository.ReserveCar(carUid, true);
-        var finishedRental = await _rentalsRepository.ProcessRent(username, rentalUid, "FINISHED");
+        await _rentalsRepository.ProcessRent(username, rentalUid, "FINISHED");
     }
 
     public async Task CancelRent(string username, Guid rentalUid)
@@ -172,7 +172,7 @@ public class RentalsService : IRentalsService
         var paymentUid = rental.PaymentUid;
         
         var car = await _carsRepository.ReserveCar(carUid, true);
-        var canceledRental = await _rentalsRepository.ProcessRent(username, rentalUid, "CANCELED");
+        await _rentalsRepository.ProcessRent(username, rentalUid, "CANCELED");
         var canceledPayment = await _paymentsRepository.CancelAsync(paymentUid);
     }
 }

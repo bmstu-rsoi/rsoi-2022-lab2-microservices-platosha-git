@@ -12,17 +12,12 @@ namespace Rentals.Controllers
             _rentalsRepository = rentalsRepository;
         }
 
-        public async Task<List<Rental>> GetAllRentals(int page, int size)
-        {
-            return await _rentalsRepository.FindAll(page, size);
-        }
-        
         public async Task<List<Rental>> GetAllRentalsByUsername(string username)
         {
             return await _rentalsRepository.FindByName(username);
         }
         
-        public async Task<Rental?> GetRentalByRentalUid(string username, Guid rentalUid)
+        public async Task<Rental?> GetRentalByUid(string username, Guid rentalUid)
         {
             return await _rentalsRepository.FindByRentalUid(username, rentalUid);
         }
@@ -32,7 +27,7 @@ namespace Rentals.Controllers
             return await _rentalsRepository.Add(rental);
         }
         
-        public async Task FinishRent(Rental rental)
+        public async Task PatchRental(Rental rental)
         {
             await _rentalsRepository.Patch(rental);
         }

@@ -53,13 +53,12 @@ public class RentalsRepository : IRentalsRepository
         return await response.Content.ReadFromJsonAsync<RentalsDTO>();
     }
 
-    public async Task<RentalsDTO> ProcessRent(string username, Guid rentalUid, string status)
+    public async Task ProcessRent(string username, Guid rentalUid, string status)
     {
         var request = new HttpRequestMessage(new HttpMethod("PATCH"),
             $"/api/v1/rental/{username}/{rentalUid}/{status}");
         var response = await _httpClient.SendAsync(request);
         
         response.EnsureSuccessStatusCode();
-        return await response.Content.ReadFromJsonAsync<RentalsDTO>();
     }
 }

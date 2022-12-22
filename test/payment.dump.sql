@@ -24,7 +24,7 @@ SET default_table_access_method = heap;
 
 --
 -- TOC entry 210 (class 1259 OID 49252)
--- Name: payment; Type: TABLE; Schema: public; Owner: postgres
+-- Name: payment; Type: TABLE; Schema: public; Owner: program
 --
 
 CREATE TABLE public.payment (
@@ -36,11 +36,11 @@ CREATE TABLE public.payment (
 );
 
 
-ALTER TABLE public.payment OWNER TO postgres;
+ALTER TABLE public.payment OWNER TO program;
 
 --
 -- TOC entry 209 (class 1259 OID 49251)
--- Name: payment_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: payment_id_seq; Type: SEQUENCE; Schema: public; Owner: program
 --
 
 CREATE SEQUENCE public.payment_id_seq
@@ -52,12 +52,12 @@ CREATE SEQUENCE public.payment_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.payment_id_seq OWNER TO postgres;
+ALTER TABLE public.payment_id_seq OWNER TO program;
 
 --
 -- TOC entry 3314 (class 0 OID 0)
 -- Dependencies: 209
--- Name: payment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: payment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: program
 --
 
 ALTER SEQUENCE public.payment_id_seq OWNED BY public.payment.id;
@@ -65,7 +65,7 @@ ALTER SEQUENCE public.payment_id_seq OWNED BY public.payment.id;
 
 --
 -- TOC entry 3164 (class 2604 OID 49255)
--- Name: payment id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: payment id; Type: DEFAULT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.payment ALTER COLUMN id SET DEFAULT nextval('public.payment_id_seq'::regclass);
@@ -74,7 +74,7 @@ ALTER TABLE ONLY public.payment ALTER COLUMN id SET DEFAULT nextval('public.paym
 --
 -- TOC entry 3315 (class 0 OID 0)
 -- Dependencies: 209
--- Name: payment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: payment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: program
 --
 
 SELECT pg_catalog.setval('public.payment_id_seq', 1, false);
@@ -82,7 +82,7 @@ SELECT pg_catalog.setval('public.payment_id_seq', 1, false);
 
 --
 -- TOC entry 3167 (class 2606 OID 49258)
--- Name: payment payment_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: payment payment_pkey; Type: CONSTRAINT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.payment

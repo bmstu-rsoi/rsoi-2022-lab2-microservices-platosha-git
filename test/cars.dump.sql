@@ -24,7 +24,7 @@ SET default_table_access_method = heap;
 
 --
 -- TOC entry 210 (class 1259 OID 49212)
--- Name: cars; Type: TABLE; Schema: public; Owner: postgres
+-- Name: cars; Type: TABLE; Schema: public; Owner: program
 --
 
 CREATE TABLE public.cars (
@@ -41,11 +41,11 @@ CREATE TABLE public.cars (
 );
 
 
-ALTER TABLE public.cars OWNER TO postgres;
+ALTER TABLE public.cars OWNER TO program;
 
 --
 -- TOC entry 209 (class 1259 OID 49211)
--- Name: cars_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: cars_id_seq; Type: SEQUENCE; Schema: public; Owner: program
 --
 
 CREATE SEQUENCE public.cars_id_seq
@@ -57,12 +57,12 @@ CREATE SEQUENCE public.cars_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.cars_id_seq OWNER TO postgres;
+ALTER TABLE public.cars_id_seq OWNER TO program;
 
 --
 -- TOC entry 3323 (class 0 OID 0)
 -- Dependencies: 209
--- Name: cars_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: cars_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: program
 --
 
 ALTER SEQUENCE public.cars_id_seq OWNED BY public.cars.id;
@@ -70,7 +70,7 @@ ALTER SEQUENCE public.cars_id_seq OWNED BY public.cars.id;
 
 --
 -- TOC entry 3168 (class 2604 OID 49215)
--- Name: cars id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: cars id; Type: DEFAULT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.cars ALTER COLUMN id SET DEFAULT nextval('public.cars_id_seq'::regclass);
@@ -80,25 +80,22 @@ ALTER TABLE ONLY public.cars ALTER COLUMN id SET DEFAULT nextval('public.cars_id
 --
 -- TOC entry 3316 (class 0 OID 49212)
 -- Dependencies: 210
--- Data for Name: cars; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: cars; Type: TABLE DATA; Schema: public; Owner: program
 --
 
 INSERT INTO public.cars (id, car_uid, brand, model, registration_number, power, price, type, availability) VALUES (1, '109b42f3-198d-4c89-9276-a7520a7120ab', 'Mercedes Benz', 'GLA 250', 'ЛО777Х799', 249, 3500, 'SEDAN', true);
---COPY public.cars (id, car_uid, brand, model, registration_number, power, type, price, availability) FROM stdin;
---1	109b42f3-198d-4c89-9276-a7520a7120ab Mercedes Benz GLA 250 ЛО777Х799' 249 'SEDAN' 3500 true
---\.
 
 --
 -- TOC entry 3324 (class 0 OID 0)
 -- Dependencies: 209
--- Name: cars_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: cars_id_seq; Type: SEQUENCE SET; Schema: public; Owner: program
 --
 
 SELECT pg_catalog.setval('public.cars_id_seq', 1, false);
 
 --
 -- TOC entry 3171 (class 2606 OID 49220)
--- Name: cars cars_car_uid_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: cars cars_car_uid_key; Type: CONSTRAINT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.cars
@@ -107,7 +104,7 @@ ALTER TABLE ONLY public.cars
 
 --
 -- TOC entry 3173 (class 2606 OID 49218)
--- Name: cars cars_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: cars cars_pkey; Type: CONSTRAINT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.cars

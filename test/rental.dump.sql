@@ -24,7 +24,7 @@ SET default_table_access_method = heap;
 
 --
 -- TOC entry 210 (class 1259 OID 49241)
--- Name: rental; Type: TABLE; Schema: public; Owner: postgres
+-- Name: rental; Type: TABLE; Schema: public; Owner: program
 --
 
 CREATE TABLE public.rental (
@@ -40,11 +40,11 @@ CREATE TABLE public.rental (
 );
 
 
-ALTER TABLE public.rental OWNER TO postgres;
+ALTER TABLE public.rental OWNER TO program;
 
 --
 -- TOC entry 209 (class 1259 OID 49240)
--- Name: rental_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: rental_id_seq; Type: SEQUENCE; Schema: public; Owner: program
 --
 
 CREATE SEQUENCE public.rental_id_seq
@@ -56,12 +56,12 @@ CREATE SEQUENCE public.rental_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.rental_id_seq OWNER TO postgres;
+ALTER TABLE public.rental_id_seq OWNER TO program;
 
 --
 -- TOC entry 3316 (class 0 OID 0)
 -- Dependencies: 209
--- Name: rental_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: rental_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: program
 --
 
 ALTER SEQUENCE public.rental_id_seq OWNED BY public.rental.id;
@@ -69,7 +69,7 @@ ALTER SEQUENCE public.rental_id_seq OWNED BY public.rental.id;
 
 --
 -- TOC entry 3164 (class 2604 OID 49244)
--- Name: rental id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: rental id; Type: DEFAULT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.rental ALTER COLUMN id SET DEFAULT nextval('public.rental_id_seq'::regclass);
@@ -78,7 +78,7 @@ ALTER TABLE ONLY public.rental ALTER COLUMN id SET DEFAULT nextval('public.renta
 --
 -- TOC entry 3317 (class 0 OID 0)
 -- Dependencies: 209
--- Name: rental_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: rental_id_seq; Type: SEQUENCE SET; Schema: public; Owner: program
 --
 
 SELECT pg_catalog.setval('public.rental_id_seq', 1, false);
@@ -86,7 +86,7 @@ SELECT pg_catalog.setval('public.rental_id_seq', 1, false);
 
 --
 -- TOC entry 3167 (class 2606 OID 49247)
--- Name: rental rental_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: rental rental_pkey; Type: CONSTRAINT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.rental
@@ -95,7 +95,7 @@ ALTER TABLE ONLY public.rental
 
 --
 -- TOC entry 3169 (class 2606 OID 49249)
--- Name: rental rental_rental_uid_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: rental rental_rental_uid_key; Type: CONSTRAINT; Schema: public; Owner: program
 --
 
 ALTER TABLE ONLY public.rental

@@ -2823,3 +2823,11 @@ LIMIT 1
 2022-12-22 15:37:02.483 +03:00 [INF] Executed endpoint 'Cars.Controllers.CarsAPIController.GetCarByUid (Cars)'
 2022-12-22 15:37:02.483 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab - - - 200 184 application/json;+charset=utf-8 2.9056ms
 2022-12-22 15:37:17.003 +03:00 [INF] Application is shutting down...
+2022-12-22 16:07:32.094 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 16:07:32.238 +03:00 [INF] Now listening on: http://[::]:8070
+2022-12-22 16:07:32.242 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 16:07:32.244 +03:00 [INF] Hosting environment: Development
+2022-12-22 16:07:32.244 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Cars
+2022-12-22 16:07:32.809 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/index.html - -
+2022-12-22 16:07:32.942 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8070/swagger/index.html - - - 200 - text/html;charset=utf-8 136.3599ms
+2022-12-22 16:07:33.068 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8070/swagger/v1/swagger.json - -

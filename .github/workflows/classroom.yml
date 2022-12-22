@@ -40,6 +40,9 @@ jobs:
         run: |
           sudo chmod +x ./scripts/fill-db.sh
           ./scripts/fill-db.sh
+        
+      - name: Timeout
+        run: sleep 10
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master

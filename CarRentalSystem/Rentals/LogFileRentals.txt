@@ -1174,3 +1174,14 @@ LIMIT 1
 2022-12-22 15:37:02.479 +03:00 [INF] Executed endpoint 'Rentals.Controllers.RentalsAPIController.GetRentalByUid (Rentals)'
 2022-12-22 15:37:02.479 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/api/v1/rental/26a4e5bf-1688-4be1-9704-6b5f10db27ac/?X-User-Name=Test+Max - - - 200 270 application/json;+charset=utf-8 2.4301ms
 2022-12-22 15:37:17.004 +03:00 [INF] Application is shutting down...
+2022-12-22 16:07:24.211 +03:00 [INF] User profile is available. Using 'C:\Users\plato\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-22 16:07:24.395 +03:00 [INF] Now listening on: http://[::]:8060
+2022-12-22 16:07:24.400 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 16:07:24.401 +03:00 [INF] Hosting environment: Development
+2022-12-22 16:07:24.401 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\Rentals
+2022-12-22 16:07:25.330 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/index.html - -
+2022-12-22 16:07:25.485 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/index.html - - - 200 - text/html;charset=utf-8 163.1726ms
+2022-12-22 16:07:25.662 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - -
+2022-12-22 16:07:25.807 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8060/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 144.8754ms
+2022-12-22 16:08:32.995 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8060/api/v1/rental/ application/json;+charset=utf-8 -
+2022-12-22 16:08:33.012 +03:00 [INF] Executing endpoint 'Rentals.Controllers.RentalsAPIController.CreateRental (Rentals)'

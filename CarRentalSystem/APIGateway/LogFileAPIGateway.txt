@@ -3074,3 +3074,13 @@ System.Net.Http.HttpRequestException: Response status code does not indicate suc
 2022-12-22 15:37:02.489 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
 2022-12-22 15:37:02.489 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/rental/26a4e5bf-1688-4be1-9704-6b5f10db27ac - - - 200 - application/json;+charset=utf-8 14.8370ms
 2022-12-22 15:37:17.002 +03:00 [INF] Application is shutting down...
+2022-12-22 16:07:47.811 +03:00 [INF] Now listening on: http://[::]:8080
+2022-12-22 16:07:47.821 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 16:07:47.822 +03:00 [INF] Hosting environment: Development
+2022-12-22 16:07:47.822 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\APIGateway
+2022-12-22 16:07:48.465 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/swagger/index.html - -
+2022-12-22 16:07:48.609 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/swagger/index.html - - - 200 - text/html;charset=utf-8 149.7993ms
+2022-12-22 16:07:48.728 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - -
+2022-12-22 16:07:48.867 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 139.6625ms
+2022-12-22 16:08:26.364 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/api/v1/cars?page=1&size=10&showAll=false - -
+2022-12-22 16:08:26.382 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.CarsAPIController.GetAllCars (APIGateway)'

@@ -34,7 +34,7 @@ public class CarsRepository : ICarsRepository
         var response = await _httpClient.GetAsync($"/api/v1/cars/{carUid}");
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<CarResponse>();
+        return await response.Content.ReadAsJsonAsync<CarResponse>();
     }
 
     public async Task<CarResponse> ReserveCar(Guid carUid, bool availability)
@@ -43,6 +43,6 @@ public class CarsRepository : ICarsRepository
         var response = await _httpClient.SendAsync(request);
         
         response.EnsureSuccessStatusCode();
-        return await response.Content.ReadFromJsonAsync<CarResponse>();
+        return await response.Content.ReadAsJsonAsync<CarResponse>();
     }
 }

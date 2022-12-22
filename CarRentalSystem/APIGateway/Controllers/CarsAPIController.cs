@@ -21,7 +21,7 @@ namespace APIGateway.Controllers
         /// <summary>Получить список всех доступных для бронирования автомобилей</summary>
         /// <response code="200">Список доступных для бронирования автомобилей</response>
         [HttpGet]
-        [SwaggerResponse(statusCode: StatusCodes.Status200OK, type: typeof(PaginationCarResponse), 
+        [SwaggerResponse(StatusCodes.Status200OK, type: typeof(PaginationCarResponse), 
             description: "Список доступных для бронирования автомобилей")]
         public async Task<IActionResult> GetAllCars([Range(0, int.MaxValue)] int page, [Range(1, 100)] int size, bool showAll)
         {

@@ -29,8 +29,8 @@ public class RentalsService : IRentalsService
             Username = username,
             PaymentUid = paymentUid,
             CarUid = request.CarUid,
-            DateFrom = request.DateFrom,
-            DateTo = request.DateTo,
+            DateFrom = request.DateFrom.UtcDateTime,
+            DateTo = request.DateTo.UtcDateTime,
             Status = status
         };
         return rentalDTO;
@@ -42,7 +42,7 @@ public class RentalsService : IRentalsService
         var response = new CreateRentalResponse()
         {
             RentalUid = rentalUid,
-            Status = RentalStatusCreate.InProgress,
+            Status = "IN_PROGRESS",
             CarUid = carUid,
             DateFrom = dateFrom,
             DateTo = dateTo
@@ -56,8 +56,8 @@ public class RentalsService : IRentalsService
         {
             RentalUid = rental.RentalUid,
             Status = rental.Status,
-            DateFrom = rental.DateFrom,
-            DateTo = rental.DateTo
+            DateFrom = rental.DateFrom.UtcDateTime,
+            DateTo = rental.DateTo.UtcDateTime
         };
         return response;
     }

@@ -41,14 +41,14 @@ jobs:
           sudo chmod +x ./scripts/fill-db.sh
           ./scripts/fill-db.sh
 
-      - name: Run API Tests
-        uses: matt-ball/newman-action@master
-        with:
-          # TODO insert your variant
-          collection: v3/postman/collection.json
-          environment: v3/postman/environment.json
-          delayRequest: 100
-          reporters: '[ "cli" ]'
+      # - name: Run API Tests
+      #   uses: matt-ball/newman-action@master
+      #   with:
+      #     # TODO insert your variant
+      #     collection: v3/postman/collection.json
+      #     environment: v3/postman/environment.json
+      #     delayRequest: 100
+      #     reporters: '[ "cli" ]'
 
       - uses: education/autograding@v1
         id: autograder

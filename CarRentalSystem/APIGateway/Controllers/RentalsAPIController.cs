@@ -1,13 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net;
+using System.Net.Mime;
 using APIGateway.Domain;
 using APIGateway.ModelsDTO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using ModelsDTO.Rentals;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace APIGateway.Controllers
 {
     [ApiController]
+    [Produces(MediaTypeNames.Application.Json)]
     [Route("/api/v1/rental")]
     public class RentalsAPIController : ControllerBase
     {
@@ -46,8 +50,6 @@ namespace APIGateway.Controllers
         /// <param name="X-User-Name">Имя пользователя</param>
         /// <response code="200">Информация по конкретному бронированию</response>
         /// <response code="404">Билет не найден</response>
-        // Glen
-        // 8b33afd0-9850-41c8-8325-32b5ea91759c
         /*[HttpGet("{rentalUid:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RentalsDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -77,9 +79,9 @@ namespace APIGateway.Controllers
         /// <response code="200">Информация о бронировании авто</response>
         /// <response code="400">Ошибка валидации данных</response>
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CreateRentalResponse))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [SwaggerResponse(StatusCodes.Status200OK, type: typeof(CreateRentalResponse),
+            description: "Информация о бронировании авто")]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, "Ошибка валидации данных")]
         public async Task<IActionResult> BookCar([Required, FromHeader(Name = "X-User-Name")] string username,
             [FromBody] CreateRentalRequest request)
         {

@@ -1,26 +1,25 @@
-﻿using System.Runtime.Serialization;
-using ModelsDTO.Payments;
+﻿using ModelsDTO.Payments;
+using Newtonsoft.Json;
 
 namespace APIGateway.ModelsDTO;
 
-public enum RentalStatusCreate
-{ 
-    [EnumMember(Value = "IN_PROGRESS")]
-    InProgress = 0,
-    
-    [EnumMember(Value = "FINISHED")]
-    Finished = 1,
-    
-    [EnumMember(Value = "CANCELED")]
-    Canceled = 2
-}
-
 public class CreateRentalResponse
 {
+    [JsonProperty("rentalUid")]
     public Guid RentalUid { get; set; }
-    public RentalStatusCreate Status { get; set; }
+    
+    [JsonProperty("status")]
+    public string Status { get; set; }
+    
+    [JsonProperty("carUid")]
     public Guid CarUid { get; set; }
+    
+    [JsonProperty("dateFrom")]
     public DateTimeOffset DateFrom { get; set; }
+    
+    [JsonProperty("dateTo")]
     public DateTimeOffset DateTo { get; set; }
+    
+    [JsonProperty("payment")]
     public PaymentInfo Payment { get; set; }
 }

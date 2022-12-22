@@ -29,8 +29,8 @@ namespace Rentals.Controllers
                 Username = rentalDTO.Username,
                 PaymentUid = rentalDTO.PaymentUid,
                 CarUid = rentalDTO.CarUid,
-                DateFrom = rentalDTO.DateFrom,
-                DateTo = rentalDTO.DateTo,
+                DateFrom = rentalDTO.DateFrom.UtcDateTime,
+                DateTo = rentalDTO.DateTo.UtcDateTime,
                 Status = rentalDTO.Status
             };
             return rental;

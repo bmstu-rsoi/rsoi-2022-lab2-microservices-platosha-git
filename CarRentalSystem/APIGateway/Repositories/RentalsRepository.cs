@@ -42,7 +42,7 @@ public class RentalsRepository : IRentalsRepository
         var response = await _httpClient.GetAsync($"/api/v1/rental/{rentalUid}/?{query}");
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<RentalsDTO?>();
+        return await response.Content.ReadFromJsonAsync<RentalsDTO>();
     }
     
     public async Task<RentalsDTO> CreateAsync(RentalsDTO rentalDTO)

@@ -78,7 +78,7 @@ namespace Rentals.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "+RentalsAPI: Error while trying to GetRentalsByUsername!");
+                _logger.LogError(e, "+ Error occurred trying GetRentalsByUsername!");
                 throw;
             }
         }
@@ -106,7 +106,7 @@ namespace Rentals.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "+RentalsAPI: Error while trying to GetRentalByUid!");
+                _logger.LogError(e, "+ Error occurred trying GetRentalByUid!");
                 throw;
             }
         }
@@ -117,26 +117,14 @@ namespace Rentals.Controllers
         /// <response code="400">Ошибка валидации данных</response>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RentalsDTO))]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CreateRental([FromBody] RentalsDTO rentalDTO)
         {
-            try
-            {
-                var rentalToAdd = GetRentalFromDTO(rentalDTO);
-                var addedRental = await _rentalsController.AddRental(rentalToAdd);
+            var rentalToAdd = GetRentalFromDTO(rentalDTO);
+            var addedRental = await _rentalsController.AddRental(rentalToAdd);
 
-                var response = InitRentalsDTO(addedRental);
-                return Created($"/api/v1/{addedRental.Id}", response);
-            }
-            catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.BadRequest)
-            {
-                return BadRequest();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "+RentalsAPI: Error while trying to CreateRental!");
-                throw;
-            }
+            var response = InitRentalsDTO(addedRental);
+            return Created($"/api/v1/{addedRental.Id}", response);
         }
         
         /// <summary>Завершение аренды автомобиля</summary>
@@ -146,26 +134,14 @@ namespace Rentals.Controllers
         /// <response code="404">Аренда не найдена</response>
         [HttpPatch("{username}/{rentalUid}/{status}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> ChangeRentalStatus(string username, Guid rentalUid, string status)
         {
-            try
-            {
-                var rental = await _rentalsController.GetRentalByUid(username, rentalUid);
-                rental.Status = status;
-                await _rentalsController.PatchRental(rental);
-
-                return NoContent();
-            }
-            catch (HttpRequestException e) when (e.StatusCode == HttpStatusCode.NotFound)
-            {
-                return NotFound(username);
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "+RentalsAPI: Error while trying to ChangeRentalStatus!");
-                throw;
-            }
+            var rental = await _rentalsController.GetRentalByUid(username, rentalUid);
+            rental.Status = status;
+            await _rentalsController.PatchRental(rental);
+            
+            return NoContent();
         }
     }
 }

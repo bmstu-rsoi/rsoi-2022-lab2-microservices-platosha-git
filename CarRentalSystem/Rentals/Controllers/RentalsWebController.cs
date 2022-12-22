@@ -19,7 +19,7 @@ namespace Rentals.Controllers
         
         public async Task<Rental?> GetRentalByUid(string username, Guid rentalUid)
         {
-            return await _rentalsRepository.FindByUid(username, rentalUid);
+            return await _rentalsRepository.FindByRentalUid(username, rentalUid);
         }
 
         public async Task<Rental> AddRental(Rental rental)

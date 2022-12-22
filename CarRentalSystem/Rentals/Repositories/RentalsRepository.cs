@@ -14,6 +14,25 @@ namespace Rentals.Repositories
             _logger = logDb;
         }
 
+        public async Task<List<Rental>> FindAll(int page, int size)
+        {
+            try
+            {
+                var rentals = await _db.Rentals
+                    .OrderBy(x => x.Id)
+                    .Skip((page - 1) * size)
+                    .Take(size)
+                    .ToListAsync();
+                return rentals;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "+ Error while trying to FindAll");
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         public async Task<List<Rental>> FindByName(string username)
         {
             try
@@ -26,12 +45,13 @@ namespace Rentals.Repositories
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "+RentalsRep: Error while trying to FindByName");
+                _logger.LogError(e, "+ Error while trying to FindByName");
+                Console.WriteLine(e);
                 throw;
             }
         }
 
-        public async Task<Rental?> FindByUid(string username, Guid RentalUid)
+        public async Task<Rental?> FindByRentalUid(string username, Guid RentalUid)
         {
             try
             {
@@ -42,7 +62,8 @@ namespace Rentals.Repositories
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "+RentalsRep: Error while trying to FindByUid");
+                _logger.LogError(e, "+ Error while trying to FindByName");
+                Console.WriteLine(e);
                 throw;
             }
         }
@@ -62,13 +83,11 @@ namespace Rentals.Repositories
                 _db.Rentals.Add(obj);
                 await _db.SaveChangesAsync();
                 
-                _logger.LogInformation("+RentalsRep: Rental {Number} was added at Rentals", obj.Id);
-                
                 return obj;
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "+RentalsRep: Error trying to add rental to Rentals");
+                _logger.LogError(e, "+RentalsRep : Error trying to add rental to Rentals");
                 throw;
             }
         }
@@ -80,11 +99,11 @@ namespace Rentals.Repositories
                 _db.Rentals.Update(obj);
                 await _db.SaveChangesAsync();
             
-                _logger.LogInformation("+RentalsRep: Rental {Number} was patched at Rentals", obj.Id);
+                _logger.LogInformation("+RentalsRep : Rental {Number} was patched at Rentals", obj.Id);
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "+RentalsRep: Error trying to patch rental to Rentals");
+                _logger.LogError(e, "+RentalsRep : Error trying to patch rental to Rentals");
                 throw;
             }
         }

@@ -32,15 +32,8 @@ namespace Rentals
             services.AddSwaggerGenNewtonsoftSupport();
 
             AddDbContext(services, Configuration);
+            AddScoped(services);
             AddLogging(services, Configuration);
-            
-            services.AddScoped<IRentalsRepository, RentalsRepository>();
-            services.AddScoped<RentalsWebController>();
-
-            // services.AddControllersWithViews()
-            //     .AddNewtonsoftJson(options =>
-            //         options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-            //     );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,11 +46,7 @@ namespace Rentals
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rentals v1"));
 
-            //app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
@@ -65,17 +54,23 @@ namespace Rentals
         private static void AddDbContext(IServiceCollection services, IConfiguration config)
         {
             services.AddDbContext<RentalContext>(opt => 
-                opt.UseNpgsql(config.GetConnectionString("Local")));
+                opt.UseNpgsql(config.GetConnectionString("Postgres")));
+        }
+
+        private static void AddScoped(IServiceCollection services)
+        {
+            services.AddScoped<IRentalsRepository, RentalsRepository>();
+            services.AddScoped<RentalsWebController>();
         }
         
         private static void AddLogging(IServiceCollection services, IConfiguration config)
         {
-            var log = new LoggerConfiguration()
+            var logger = new LoggerConfiguration()
                 .WriteTo.File(config["Logger"])
                 .CreateLogger();
             
             services.AddLogging(loggingBuilder =>
-                loggingBuilder.AddSerilog(logger: log, dispose: true));
+                loggingBuilder.AddSerilog(logger, true));
         }
     }
 }

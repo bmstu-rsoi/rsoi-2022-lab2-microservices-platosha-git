@@ -3346,3 +3346,329 @@ System.Net.Http.HttpRequestException: Response status code does not indicate suc
 2022-12-22 16:09:08.581 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
 2022-12-22 16:09:08.581 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/rental/99ce03be-797f-41f9-997a-1fdc67777445 - - - 200 - application/json;+charset=utf-8 15.3243ms
 2022-12-22 16:14:21.679 +03:00 [INF] Application is shutting down...
+2022-12-22 22:04:08.581 +03:00 [INF] Now listening on: http://[::]:8080
+2022-12-22 22:04:08.592 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 22:04:08.594 +03:00 [INF] Hosting environment: Development
+2022-12-22 22:04:08.594 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\APIGateway
+2022-12-22 22:04:09.301 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/swagger/index.html - -
+2022-12-22 22:04:09.538 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/swagger/index.html - - - 200 - text/html;charset=utf-8 243.7239ms
+2022-12-22 22:04:09.731 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - -
+2022-12-22 22:04:09.926 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 195.0074ms
+2022-12-22 22:05:24.465 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/api/v1/cars?page=1&size=10&showAll=false - -
+2022-12-22 22:05:24.498 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.CarsAPIController.GetAllCars (APIGateway)'
+2022-12-22 22:05:24.548 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller APIGateway.Controllers.CarsAPIController (APIGateway).
+2022-12-22 22:05:24.634 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False
+2022-12-22 22:05:24.637 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False
+2022-12-22 22:05:24.957 +03:00 [INF] Received HTTP response headers after 312.358ms - 500
+2022-12-22 22:05:24.959 +03:00 [INF] End processing HTTP request after 337.8116ms - 500
+2022-12-22 22:05:24.977 +03:00 [INF] Executed action APIGateway.Controllers.CarsAPIController.GetAllCars (APIGateway) in 420.4903ms
+2022-12-22 22:05:24.978 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.CarsAPIController.GetAllCars (APIGateway)'
+2022-12-22 22:05:25.049 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at APIGateway.CarsRepository.GetAllAsync(Int32 page, Int32 size, Boolean showAll) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\APIGateway\Repositories\CarsRepository.cs:line 27
+   at APIGateway.Controllers.CarsAPIController.GetAllCars(Int32 page, Int32 size, Boolean showAll) in C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\APIGateway\Controllers\CarsAPIController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-12-22 22:05:25.055 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/cars?page=1&size=10&showAll=false - - - 500 - text/plain;+charset=utf-8 589.7663ms
+2022-12-22 22:05:51.685 +03:00 [INF] Application is shutting down...
+2022-12-22 22:11:42.560 +03:00 [INF] Now listening on: http://[::]:8080
+2022-12-22 22:11:42.573 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-22 22:11:42.574 +03:00 [INF] Hosting environment: Development
+2022-12-22 22:11:42.575 +03:00 [INF] Content root path: C:\Users\plato\OneDrive\Рабочий стол\BMSTU\1m sem\rsoi-2022-lab2-microservices-platosha-git\CarRentalSystem\APIGateway
+2022-12-22 22:11:43.027 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/swagger/index.html - -
+2022-12-22 22:11:43.221 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/swagger/index.html - - - 200 - text/html;charset=utf-8 201.9778ms
+2022-12-22 22:11:43.409 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - -
+2022-12-22 22:11:43.622 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 213.3218ms
+2022-12-22 22:11:49.286 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/api/v1/cars?page=1&size=10&showAll=false - -
+2022-12-22 22:11:49.321 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.CarsAPIController.GetAllCars (APIGateway)'
+2022-12-22 22:11:49.366 +03:00 [INF] Route matched with {action = "GetAllCars", controller = "CarsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCars(Int32, Int32, Boolean) on controller APIGateway.Controllers.CarsAPIController (APIGateway).
+2022-12-22 22:11:49.425 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False
+2022-12-22 22:11:49.427 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/?page=1&size=10&showAll=False
+2022-12-22 22:11:51.576 +03:00 [INF] Received HTTP response headers after 2140.4429ms - 200
+2022-12-22 22:11:51.578 +03:00 [INF] End processing HTTP request after 2166.5304ms - 200
+2022-12-22 22:11:51.647 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Cars.PaginationCarResponse'.
+2022-12-22 22:11:51.676 +03:00 [INF] Executed action APIGateway.Controllers.CarsAPIController.GetAllCars (APIGateway) in 2303.8011ms
+2022-12-22 22:11:51.677 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.CarsAPIController.GetAllCars (APIGateway)'
+2022-12-22 22:11:51.679 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/cars?page=1&size=10&showAll=false - - - 200 - application/json;+charset=utf-8 2392.9490ms
+2022-12-22 22:11:56.647 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/v1/rental application/json 114
+2022-12-22 22:11:56.649 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.BookCar (APIGateway)'
+2022-12-22 22:11:56.653 +03:00 [INF] Route matched with {action = "BookCar", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BookCar(System.String, APIGateway.ModelsDTO.CreateRentalRequest) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:11:56.708 +03:00 [INF] Start processing HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False
+2022-12-22 22:11:56.709 +03:00 [INF] Sending HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False
+2022-12-22 22:11:56.907 +03:00 [INF] Received HTTP response headers after 198.0293ms - 200
+2022-12-22 22:11:56.907 +03:00 [INF] End processing HTTP request after 198.8429ms - 200
+2022-12-22 22:11:56.977 +03:00 [INF] Start processing HTTP request POST http://localhost:8050/api/v1/payment/
+2022-12-22 22:11:56.977 +03:00 [INF] Sending HTTP request POST http://localhost:8050/api/v1/payment/
+2022-12-22 22:11:59.181 +03:00 [INF] Received HTTP response headers after 2203.9546ms - 201
+2022-12-22 22:11:59.182 +03:00 [INF] End processing HTTP request after 2204.7027ms - 201
+2022-12-22 22:11:59.198 +03:00 [INF] Start processing HTTP request POST http://localhost:8060/api/v1/rental/
+2022-12-22 22:11:59.198 +03:00 [INF] Sending HTTP request POST http://localhost:8060/api/v1/rental/
+2022-12-22 22:12:01.377 +03:00 [INF] Received HTTP response headers after 2178.8117ms - 201
+2022-12-22 22:12:01.377 +03:00 [INF] End processing HTTP request after 2179.6594ms - 201
+2022-12-22 22:12:01.397 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:01.397 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:01.544 +03:00 [INF] Received HTTP response headers after 146.8585ms - 200
+2022-12-22 22:12:01.545 +03:00 [INF] End processing HTTP request after 147.5402ms - 200
+2022-12-22 22:12:01.546 +03:00 [INF] Executing OkObjectResult, writing value of type 'APIGateway.ModelsDTO.CreateRentalResponse'.
+2022-12-22 22:12:01.549 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.BookCar (APIGateway) in 4895.2234ms
+2022-12-22 22:12:01.549 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.BookCar (APIGateway)'
+2022-12-22 22:12:01.549 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/v1/rental application/json 114 - 200 - application/json;+charset=utf-8 4901.8647ms
+2022-12-22 22:12:05.179 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90 - -
+2022-12-22 22:12:05.180 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
+2022-12-22 22:12:05.183 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:12:05.196 +03:00 [INF] Start processing HTTP request GET http://localhost:8060/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90/?X-User-Name=Test+Max
+2022-12-22 22:12:05.196 +03:00 [INF] Sending HTTP request GET http://localhost:8060/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90/?X-User-Name=Test+Max
+2022-12-22 22:12:05.458 +03:00 [INF] Received HTTP response headers after 261.3335ms - 200
+2022-12-22 22:12:05.458 +03:00 [INF] End processing HTTP request after 262.3992ms - 200
+2022-12-22 22:12:05.465 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:05.465 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:05.560 +03:00 [INF] Received HTTP response headers after 94.5266ms - 200
+2022-12-22 22:12:05.560 +03:00 [INF] End processing HTTP request after 95.5453ms - 200
+2022-12-22 22:12:05.562 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:05.562 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:05.642 +03:00 [INF] Received HTTP response headers after 79.9794ms - 200
+2022-12-22 22:12:05.642 +03:00 [INF] End processing HTTP request after 80.6437ms - 200
+2022-12-22 22:12:05.643 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.RentalResponse'.
+2022-12-22 22:12:05.647 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway) in 464.1097ms
+2022-12-22 22:12:05.647 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
+2022-12-22 22:12:05.647 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90 - - - 200 - application/json;+charset=utf-8 468.1371ms
+2022-12-22 22:12:09.337 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/api/v1/rental - -
+2022-12-22 22:12:09.337 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.GetAllRentalsByUsername (APIGateway)'
+2022-12-22 22:12:09.343 +03:00 [INF] Route matched with {action = "GetAllRentalsByUsername", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllRentalsByUsername(System.String) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:12:09.349 +03:00 [INF] Start processing HTTP request GET http://localhost:8060/api/v1/rental/?X-User-Name=Test+Max
+2022-12-22 22:12:09.349 +03:00 [INF] Sending HTTP request GET http://localhost:8060/api/v1/rental/?X-User-Name=Test+Max
+2022-12-22 22:12:09.463 +03:00 [INF] Received HTTP response headers after 113.9204ms - 200
+2022-12-22 22:12:09.463 +03:00 [INF] End processing HTTP request after 114.7797ms - 200
+2022-12-22 22:12:09.470 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.471 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.478 +03:00 [INF] Received HTTP response headers after 7.3019ms - 200
+2022-12-22 22:12:09.478 +03:00 [INF] End processing HTTP request after 8.2069ms - 200
+2022-12-22 22:12:09.479 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/eba72bf1-b198-4e58-8bb8-555a54c11c22
+2022-12-22 22:12:09.479 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/eba72bf1-b198-4e58-8bb8-555a54c11c22
+2022-12-22 22:12:09.486 +03:00 [INF] Received HTTP response headers after 7.264ms - 200
+2022-12-22 22:12:09.487 +03:00 [INF] End processing HTTP request after 7.8961ms - 200
+2022-12-22 22:12:09.487 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.488 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.495 +03:00 [INF] Received HTTP response headers after 6.8194ms - 200
+2022-12-22 22:12:09.495 +03:00 [INF] End processing HTTP request after 7.6269ms - 200
+2022-12-22 22:12:09.495 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/a0da2e1f-32aa-4096-a066-cac438818ab3
+2022-12-22 22:12:09.495 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/a0da2e1f-32aa-4096-a066-cac438818ab3
+2022-12-22 22:12:09.503 +03:00 [INF] Received HTTP response headers after 7.3649ms - 200
+2022-12-22 22:12:09.503 +03:00 [INF] End processing HTTP request after 8.0542ms - 200
+2022-12-22 22:12:09.504 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.504 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.511 +03:00 [INF] Received HTTP response headers after 6.9047ms - 200
+2022-12-22 22:12:09.512 +03:00 [INF] End processing HTTP request after 7.6487ms - 200
+2022-12-22 22:12:09.512 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/af9ddddf-f278-4e58-a098-3112a4345a2a
+2022-12-22 22:12:09.512 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/af9ddddf-f278-4e58-a098-3112a4345a2a
+2022-12-22 22:12:09.518 +03:00 [INF] Received HTTP response headers after 6.2646ms - 200
+2022-12-22 22:12:09.519 +03:00 [INF] End processing HTTP request after 6.725ms - 200
+2022-12-22 22:12:09.519 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.520 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.528 +03:00 [INF] Received HTTP response headers after 8.2582ms - 200
+2022-12-22 22:12:09.528 +03:00 [INF] End processing HTTP request after 9.1813ms - 200
+2022-12-22 22:12:09.529 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/5a667e88-cb4a-4a8a-87b3-eb047489f83e
+2022-12-22 22:12:09.529 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/5a667e88-cb4a-4a8a-87b3-eb047489f83e
+2022-12-22 22:12:09.537 +03:00 [INF] Received HTTP response headers after 7.2992ms - 200
+2022-12-22 22:12:09.537 +03:00 [INF] End processing HTTP request after 8.1052ms - 200
+2022-12-22 22:12:09.538 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.538 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.545 +03:00 [INF] Received HTTP response headers after 6.8079ms - 200
+2022-12-22 22:12:09.546 +03:00 [INF] End processing HTTP request after 7.5161ms - 200
+2022-12-22 22:12:09.546 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/3d5f7f2a-1993-40b0-a264-7770654a0279
+2022-12-22 22:12:09.546 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/3d5f7f2a-1993-40b0-a264-7770654a0279
+2022-12-22 22:12:09.555 +03:00 [INF] Received HTTP response headers after 8.6226ms - 200
+2022-12-22 22:12:09.555 +03:00 [INF] End processing HTTP request after 9.2981ms - 200
+2022-12-22 22:12:09.556 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.556 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.563 +03:00 [INF] Received HTTP response headers after 7.0457ms - 200
+2022-12-22 22:12:09.563 +03:00 [INF] End processing HTTP request after 7.6674ms - 200
+2022-12-22 22:12:09.564 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/568061d3-f4bb-416a-8483-2aa259f0515d
+2022-12-22 22:12:09.564 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/568061d3-f4bb-416a-8483-2aa259f0515d
+2022-12-22 22:12:09.573 +03:00 [INF] Received HTTP response headers after 8.5435ms - 200
+2022-12-22 22:12:09.573 +03:00 [INF] End processing HTTP request after 9.3676ms - 200
+2022-12-22 22:12:09.574 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.574 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.582 +03:00 [INF] Received HTTP response headers after 7.5719ms - 200
+2022-12-22 22:12:09.582 +03:00 [INF] End processing HTTP request after 8.2623ms - 200
+2022-12-22 22:12:09.582 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/fc763627-5cc4-4865-884d-11c1313dea8c
+2022-12-22 22:12:09.583 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/fc763627-5cc4-4865-884d-11c1313dea8c
+2022-12-22 22:12:09.591 +03:00 [INF] Received HTTP response headers after 8.2495ms - 200
+2022-12-22 22:12:09.591 +03:00 [INF] End processing HTTP request after 8.8703ms - 200
+2022-12-22 22:12:09.592 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.592 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.599 +03:00 [INF] Received HTTP response headers after 6.6375ms - 200
+2022-12-22 22:12:09.599 +03:00 [INF] End processing HTTP request after 7.191ms - 200
+2022-12-22 22:12:09.599 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/0a0360ca-8083-4d65-aed0-92ea3de0181f
+2022-12-22 22:12:09.599 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/0a0360ca-8083-4d65-aed0-92ea3de0181f
+2022-12-22 22:12:09.607 +03:00 [INF] Received HTTP response headers after 7.4199ms - 200
+2022-12-22 22:12:09.607 +03:00 [INF] End processing HTTP request after 7.9092ms - 200
+2022-12-22 22:12:09.608 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.608 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.615 +03:00 [INF] Received HTTP response headers after 7.2515ms - 200
+2022-12-22 22:12:09.616 +03:00 [INF] End processing HTTP request after 7.8886ms - 200
+2022-12-22 22:12:09.616 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/ec8cf29f-29f6-4fad-9ac6-e53493097d8f
+2022-12-22 22:12:09.616 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/ec8cf29f-29f6-4fad-9ac6-e53493097d8f
+2022-12-22 22:12:09.626 +03:00 [INF] Received HTTP response headers after 9.3519ms - 200
+2022-12-22 22:12:09.626 +03:00 [INF] End processing HTTP request after 9.9579ms - 200
+2022-12-22 22:12:09.628 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.628 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.638 +03:00 [INF] Received HTTP response headers after 9.5786ms - 200
+2022-12-22 22:12:09.638 +03:00 [INF] End processing HTTP request after 10.527ms - 200
+2022-12-22 22:12:09.638 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/3e51bcce-2f22-4137-b080-57af5e02d527
+2022-12-22 22:12:09.638 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/3e51bcce-2f22-4137-b080-57af5e02d527
+2022-12-22 22:12:09.645 +03:00 [INF] Received HTTP response headers after 6.8573ms - 200
+2022-12-22 22:12:09.646 +03:00 [INF] End processing HTTP request after 7.3289ms - 200
+2022-12-22 22:12:09.646 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.646 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.655 +03:00 [INF] Received HTTP response headers after 7.9591ms - 200
+2022-12-22 22:12:09.655 +03:00 [INF] End processing HTTP request after 8.8059ms - 200
+2022-12-22 22:12:09.656 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/1b2b245d-07f1-426b-8bef-cc028932665c
+2022-12-22 22:12:09.656 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/1b2b245d-07f1-426b-8bef-cc028932665c
+2022-12-22 22:12:09.664 +03:00 [INF] Received HTTP response headers after 7.3849ms - 200
+2022-12-22 22:12:09.664 +03:00 [INF] End processing HTTP request after 8.5748ms - 200
+2022-12-22 22:12:09.664 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.664 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.673 +03:00 [INF] Received HTTP response headers after 8.4738ms - 200
+2022-12-22 22:12:09.673 +03:00 [INF] End processing HTTP request after 8.9246ms - 200
+2022-12-22 22:12:09.674 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/a1f83cca-4047-4575-a73b-499f399176df
+2022-12-22 22:12:09.674 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/a1f83cca-4047-4575-a73b-499f399176df
+2022-12-22 22:12:09.681 +03:00 [INF] Received HTTP response headers after 6.9089ms - 200
+2022-12-22 22:12:09.681 +03:00 [INF] End processing HTTP request after 7.6068ms - 200
+2022-12-22 22:12:09.682 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.682 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.691 +03:00 [INF] Received HTTP response headers after 8.6518ms - 200
+2022-12-22 22:12:09.691 +03:00 [INF] End processing HTTP request after 9.0902ms - 200
+2022-12-22 22:12:09.691 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/8438112e-686e-44b7-8c79-367186c6a7f4
+2022-12-22 22:12:09.691 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/8438112e-686e-44b7-8c79-367186c6a7f4
+2022-12-22 22:12:09.700 +03:00 [INF] Received HTTP response headers after 8.2964ms - 200
+2022-12-22 22:12:09.700 +03:00 [INF] End processing HTTP request after 8.7883ms - 200
+2022-12-22 22:12:09.700 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.700 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:09.710 +03:00 [INF] Received HTTP response headers after 9.6264ms - 200
+2022-12-22 22:12:09.710 +03:00 [INF] End processing HTTP request after 10.1318ms - 200
+2022-12-22 22:12:09.711 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:09.711 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:09.721 +03:00 [INF] Received HTTP response headers after 9.8285ms - 200
+2022-12-22 22:12:09.721 +03:00 [INF] End processing HTTP request after 10.3836ms - 200
+2022-12-22 22:12:09.722 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ModelsDTO.Rentals.RentalResponse, ModelsDTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-22 22:12:09.725 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.GetAllRentalsByUsername (APIGateway) in 381.3827ms
+2022-12-22 22:12:09.725 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.GetAllRentalsByUsername (APIGateway)'
+2022-12-22 22:12:09.725 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/rental - - - 200 - application/json;+charset=utf-8 388.2299ms
+2022-12-22 22:12:16.791 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:8080/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90 - -
+2022-12-22 22:12:16.792 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.CancelBookCar (APIGateway)'
+2022-12-22 22:12:16.796 +03:00 [INF] Route matched with {action = "CancelBookCar", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CancelBookCar(System.String, System.Guid) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:12:16.798 +03:00 [INF] Start processing HTTP request GET http://localhost:8060/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90/?X-User-Name=Test+Max
+2022-12-22 22:12:16.798 +03:00 [INF] Sending HTTP request GET http://localhost:8060/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90/?X-User-Name=Test+Max
+2022-12-22 22:12:16.810 +03:00 [INF] Received HTTP response headers after 11.6945ms - 200
+2022-12-22 22:12:16.810 +03:00 [INF] End processing HTTP request after 12.3837ms - 200
+2022-12-22 22:12:16.811 +03:00 [INF] Start processing HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True
+2022-12-22 22:12:16.811 +03:00 [INF] Sending HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True
+2022-12-22 22:12:16.821 +03:00 [INF] Received HTTP response headers after 9.9398ms - 200
+2022-12-22 22:12:16.821 +03:00 [INF] End processing HTTP request after 10.4286ms - 200
+2022-12-22 22:12:16.824 +03:00 [INF] Start processing HTTP request PATCH http://localhost:8060/api/v1/rental/Test%20Max/b6153128-a9f8-4059-a07c-47c0c8053c90/CANCELED
+2022-12-22 22:12:16.824 +03:00 [INF] Sending HTTP request PATCH http://localhost:8060/api/v1/rental/Test%20Max/b6153128-a9f8-4059-a07c-47c0c8053c90/CANCELED
+2022-12-22 22:12:16.864 +03:00 [INF] Received HTTP response headers after 39.3785ms - 200
+2022-12-22 22:12:16.864 +03:00 [INF] End processing HTTP request after 40.9121ms - 200
+2022-12-22 22:12:16.866 +03:00 [INF] Start processing HTTP request PATCH http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:16.866 +03:00 [INF] Sending HTTP request PATCH http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:16.889 +03:00 [INF] Received HTTP response headers after 22.5581ms - 200
+2022-12-22 22:12:16.889 +03:00 [INF] End processing HTTP request after 23.1436ms - 200
+2022-12-22 22:12:16.894 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-12-22 22:12:16.894 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.CancelBookCar (APIGateway) in 98.5836ms
+2022-12-22 22:12:16.895 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.CancelBookCar (APIGateway)'
+2022-12-22 22:12:16.895 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:8080/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90 - - - 204 - - 103.3614ms
+2022-12-22 22:12:20.195 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90 - -
+2022-12-22 22:12:20.196 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
+2022-12-22 22:12:20.196 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:12:20.197 +03:00 [INF] Start processing HTTP request GET http://localhost:8060/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90/?X-User-Name=Test+Max
+2022-12-22 22:12:20.197 +03:00 [INF] Sending HTTP request GET http://localhost:8060/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90/?X-User-Name=Test+Max
+2022-12-22 22:12:20.204 +03:00 [INF] Received HTTP response headers after 6.7634ms - 200
+2022-12-22 22:12:20.204 +03:00 [INF] End processing HTTP request after 7.5388ms - 200
+2022-12-22 22:12:20.204 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:20.205 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:20.212 +03:00 [INF] Received HTTP response headers after 7.1553ms - 200
+2022-12-22 22:12:20.212 +03:00 [INF] End processing HTTP request after 7.6751ms - 200
+2022-12-22 22:12:20.213 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:20.213 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/25732538-7c42-45b1-b996-4d847080b36c
+2022-12-22 22:12:20.222 +03:00 [INF] Received HTTP response headers after 8.8517ms - 200
+2022-12-22 22:12:20.222 +03:00 [INF] End processing HTTP request after 9.452ms - 200
+2022-12-22 22:12:20.223 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.RentalResponse'.
+2022-12-22 22:12:20.223 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway) in 26.688ms
+2022-12-22 22:12:20.223 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
+2022-12-22 22:12:20.223 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/rental/b6153128-a9f8-4059-a07c-47c0c8053c90 - - - 200 - application/json;+charset=utf-8 27.9118ms
+2022-12-22 22:12:23.333 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/v1/rental application/json 114
+2022-12-22 22:12:23.333 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.BookCar (APIGateway)'
+2022-12-22 22:12:23.334 +03:00 [INF] Route matched with {action = "BookCar", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BookCar(System.String, APIGateway.ModelsDTO.CreateRentalRequest) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:12:23.335 +03:00 [INF] Start processing HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False
+2022-12-22 22:12:23.336 +03:00 [INF] Sending HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=False
+2022-12-22 22:12:23.349 +03:00 [INF] Received HTTP response headers after 13.0499ms - 200
+2022-12-22 22:12:23.350 +03:00 [INF] End processing HTTP request after 14.1764ms - 200
+2022-12-22 22:12:23.350 +03:00 [INF] Start processing HTTP request POST http://localhost:8050/api/v1/payment/
+2022-12-22 22:12:23.351 +03:00 [INF] Sending HTTP request POST http://localhost:8050/api/v1/payment/
+2022-12-22 22:12:23.371 +03:00 [INF] Received HTTP response headers after 20.1559ms - 201
+2022-12-22 22:12:23.371 +03:00 [INF] End processing HTTP request after 20.934ms - 201
+2022-12-22 22:12:23.371 +03:00 [INF] Start processing HTTP request POST http://localhost:8060/api/v1/rental/
+2022-12-22 22:12:23.372 +03:00 [INF] Sending HTTP request POST http://localhost:8060/api/v1/rental/
+2022-12-22 22:12:23.390 +03:00 [INF] Received HTTP response headers after 17.7393ms - 201
+2022-12-22 22:12:23.390 +03:00 [INF] End processing HTTP request after 18.4415ms - 201
+2022-12-22 22:12:23.390 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/fb815ae5-3eef-4e56-a568-779721b31fd7
+2022-12-22 22:12:23.390 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/fb815ae5-3eef-4e56-a568-779721b31fd7
+2022-12-22 22:12:23.397 +03:00 [INF] Received HTTP response headers after 6.6115ms - 200
+2022-12-22 22:12:23.398 +03:00 [INF] End processing HTTP request after 7.2391ms - 200
+2022-12-22 22:12:23.398 +03:00 [INF] Executing OkObjectResult, writing value of type 'APIGateway.ModelsDTO.CreateRentalResponse'.
+2022-12-22 22:12:23.398 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.BookCar (APIGateway) in 64.44ms
+2022-12-22 22:12:23.398 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.BookCar (APIGateway)'
+2022-12-22 22:12:23.399 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/v1/rental application/json 114 - 200 - application/json;+charset=utf-8 65.7113ms
+2022-12-22 22:12:26.108 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:8080/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65/finish - 0
+2022-12-22 22:12:26.109 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.FinishBookCar (APIGateway)'
+2022-12-22 22:12:26.115 +03:00 [INF] Route matched with {action = "FinishBookCar", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishBookCar(System.String, System.Guid) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:12:26.118 +03:00 [INF] Start processing HTTP request GET http://localhost:8060/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65/?X-User-Name=Test+Max
+2022-12-22 22:12:26.118 +03:00 [INF] Sending HTTP request GET http://localhost:8060/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65/?X-User-Name=Test+Max
+2022-12-22 22:12:26.138 +03:00 [INF] Received HTTP response headers after 19.5287ms - 200
+2022-12-22 22:12:26.138 +03:00 [INF] End processing HTTP request after 20.4047ms - 200
+2022-12-22 22:12:26.139 +03:00 [INF] Start processing HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True
+2022-12-22 22:12:26.139 +03:00 [INF] Sending HTTP request PATCH http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab/?availability=True
+2022-12-22 22:12:26.154 +03:00 [INF] Received HTTP response headers after 15.2512ms - 200
+2022-12-22 22:12:26.155 +03:00 [INF] End processing HTTP request after 16.0953ms - 200
+2022-12-22 22:12:26.155 +03:00 [INF] Start processing HTTP request PATCH http://localhost:8060/api/v1/rental/Test%20Max/2eae5028-61e9-44c7-a268-936abd2b0b65/FINISHED
+2022-12-22 22:12:26.156 +03:00 [INF] Sending HTTP request PATCH http://localhost:8060/api/v1/rental/Test%20Max/2eae5028-61e9-44c7-a268-936abd2b0b65/FINISHED
+2022-12-22 22:12:26.168 +03:00 [INF] Received HTTP response headers after 12.2715ms - 200
+2022-12-22 22:12:26.168 +03:00 [INF] End processing HTTP request after 13.1352ms - 200
+2022-12-22 22:12:26.169 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2022-12-22 22:12:26.169 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.FinishBookCar (APIGateway) in 54.4714ms
+2022-12-22 22:12:26.169 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.FinishBookCar (APIGateway)'
+2022-12-22 22:12:26.170 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:8080/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65/finish - 0 - 204 - - 61.2665ms
+2022-12-22 22:12:29.232 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:8080/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65 - -
+2022-12-22 22:12:29.232 +03:00 [INF] Executing endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
+2022-12-22 22:12:29.232 +03:00 [INF] Route matched with {action = "GetRentalByUid", controller = "RentalsAPI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRentalByUid(System.String, System.Guid) on controller APIGateway.Controllers.RentalsAPIController (APIGateway).
+2022-12-22 22:12:29.233 +03:00 [INF] Start processing HTTP request GET http://localhost:8060/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65/?X-User-Name=Test+Max
+2022-12-22 22:12:29.233 +03:00 [INF] Sending HTTP request GET http://localhost:8060/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65/?X-User-Name=Test+Max
+2022-12-22 22:12:29.241 +03:00 [INF] Received HTTP response headers after 8.0498ms - 200
+2022-12-22 22:12:29.241 +03:00 [INF] End processing HTTP request after 8.6506ms - 200
+2022-12-22 22:12:29.242 +03:00 [INF] Start processing HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:29.242 +03:00 [INF] Sending HTTP request GET http://localhost:8070/api/v1/cars/109b42f3-198d-4c89-9276-a7520a7120ab
+2022-12-22 22:12:29.250 +03:00 [INF] Received HTTP response headers after 8.3749ms - 200
+2022-12-22 22:12:29.251 +03:00 [INF] End processing HTTP request after 8.9756ms - 200
+2022-12-22 22:12:29.252 +03:00 [INF] Start processing HTTP request GET http://localhost:8050/api/v1/payment/fb815ae5-3eef-4e56-a568-779721b31fd7
+2022-12-22 22:12:29.252 +03:00 [INF] Sending HTTP request GET http://localhost:8050/api/v1/payment/fb815ae5-3eef-4e56-a568-779721b31fd7
+2022-12-22 22:12:29.259 +03:00 [INF] Received HTTP response headers after 6.6632ms - 200
+2022-12-22 22:12:29.259 +03:00 [INF] End processing HTTP request after 7.4793ms - 200
+2022-12-22 22:12:29.259 +03:00 [INF] Executing OkObjectResult, writing value of type 'ModelsDTO.Rentals.RentalResponse'.
+2022-12-22 22:12:29.260 +03:00 [INF] Executed action APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway) in 27.311ms
+2022-12-22 22:12:29.260 +03:00 [INF] Executed endpoint 'APIGateway.Controllers.RentalsAPIController.GetRentalByUid (APIGateway)'
+2022-12-22 22:12:29.260 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:8080/api/v1/rental/2eae5028-61e9-44c7-a268-936abd2b0b65 - - - 200 - application/json;+charset=utf-8 28.2118ms
+2022-12-22 22:12:34.247 +03:00 [INF] Application is shutting down...

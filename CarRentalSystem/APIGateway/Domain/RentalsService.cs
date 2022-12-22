@@ -56,8 +56,8 @@ public class RentalsService : IRentalsService
         {
             RentalUid = rental.RentalUid,
             Status = rental.Status,
-            DateFrom = rental.DateFrom.AddDays(1).ToString("yyyy-MM-dd"),
-            DateTo = rental.DateTo.AddDays(1).ToString("yyyy-MM-dd")
+            DateFrom = rental.DateFrom.ToString("yyyy-MM-dd"),
+            DateTo = rental.DateTo.ToString("yyyy-MM-dd")
         };
         return response;
     }
